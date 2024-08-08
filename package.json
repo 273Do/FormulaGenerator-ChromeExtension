@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@eduardoac-skimlinks/webext-redux": "3.0.1-release-candidate",
+    "@extend-chrome/storage": "^1.5.0",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-select": "^2.1.1",
     "@reduxjs/toolkit": "^1.9.5",
