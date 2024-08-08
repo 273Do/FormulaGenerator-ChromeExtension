@@ -17,8 +17,8 @@ interface MyBucket {
 const bucket = getBucket<MyBucket>("my_bucket", "sync");
 
 const Popup = () => {
-  document.body.style.width = "20rem";
-  document.body.style.height = "20rem";
+  // document.body.style.width = "20rem";
+  // document.body.style.height = "20rem";
 
   const [lang, setLang] = useState<string | null>(null);
 
@@ -38,7 +38,7 @@ const Popup = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center m-2">
+      <div className="flex flex-col items-center m-2 w-80 h-80">
         <p>選択したテキストを次の言語に翻訳</p>
         <Select value={lang} onValueChange={saveLang}>
           <SelectTrigger className="w-[180px]">
