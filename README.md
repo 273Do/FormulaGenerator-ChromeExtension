@@ -1,4 +1,4 @@
-<div align="center">
+<!-- <div align="center">
   <br>
  <img src="https://raw.githubusercontent.com/sinanbekar/browser-extension-react-typescript-starter/main/public/images/extension_128.png" alt="Browser Extension React & TypeScript Starter" width="128">
   <br>
@@ -144,4 +144,4 @@ This repository is following the [Conventional Commits](https://www.conventional
 
 ## License
 
-MIT © [Sinan Bekar](https://sinan.engineer)
+MIT © [Sinan Bekar](https://sinan.engineer) -->
