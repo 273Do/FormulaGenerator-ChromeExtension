@@ -4,13 +4,16 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { proxyStore } from "../app/proxyStore";
 import Popup from "./Popup";
+import { ThemeProvider } from "../components/theme-provider";
 
 proxyStore.ready().then(() => {
   createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
-      <Provider store={proxyStore}>
-        <Popup />
-      </Provider>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <Provider store={proxyStore}>
+          <Popup />
+        </Provider>
+      </ThemeProvider>
     </React.StrictMode>
   );
 });

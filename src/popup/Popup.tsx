@@ -8,7 +8,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../components/ui/select";
+
 import { useEffect, useState } from "react";
+import * as Layout from "./layouts/index";
 
 interface MyBucket {
   targetLang: string | null;
@@ -17,28 +19,25 @@ interface MyBucket {
 const bucket = getBucket<MyBucket>("my_bucket", "sync");
 
 const Popup = () => {
-  // document.body.style.width = "20rem";
-  // document.body.style.height = "20rem";
+  // const [lang, setLang] = useState<string | null>(null);
 
-  const [lang, setLang] = useState<string | null>(null);
+  // useEffect(() => {
+  //   (async () => {
+  //     const value = await bucket.get();
+  //     if (value.targetLang) {
+  //       setLang(value.targetLang);
+  //     }
+  //   })();
+  // }, []);
 
-  useEffect(() => {
-    (async () => {
-      const value = await bucket.get();
-      if (value.targetLang) {
-        setLang(value.targetLang);
-      }
-    })();
-  }, []);
-
-  const saveLang = (lang: string | null) => {
-    bucket.set({ targetLang: lang });
-    setLang(lang);
-  };
+  // const saveLang = (lang: string | null) => {
+  //   bucket.set({ targetLang: lang });
+  //   setLang(lang);
+  // };
 
   return (
     <>
-      <div className="flex flex-col items-center m-2 w-80 h-80">
+      {/* <div className="flex flex-col items-center m-2 w-80 h-80">
         <p>選択したテキストを次の言語に翻訳</p>
         <Select value={lang} onValueChange={saveLang}>
           <SelectTrigger className="w-[180px]">
@@ -51,8 +50,16 @@ const Popup = () => {
             <SelectItem value="JA">日本語</SelectItem>
           </SelectContent>
         </Select>
-      </div>
+      </div> */}
       {/* <Counter /> */}
+      <main className="flex flex-col items-center m-4 w-[300px] h-[550px]">
+        <Layout.Header />
+        <div>
+          <p>contents</p>
+        </div>
+        <Layout.Footer />
+      </main>
+      {/* <ModeToggle /> */}
     </>
   );
 };
