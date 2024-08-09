@@ -11,6 +11,9 @@ import {
 
 import { useEffect, useState } from "react";
 import * as Layout from "./layouts/index";
+import Counter from "./components/Counter/Counter";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 interface MyBucket {
   targetLang: string | null;
@@ -29,6 +32,8 @@ const Popup = () => {
   //     }
   //   })();
   // }, []);
+
+  const page = useSelector((state: RootState) => state.page.value);
 
   // const saveLang = (lang: string | null) => {
   //   bucket.set({ targetLang: lang });
@@ -53,10 +58,10 @@ const Popup = () => {
       </div> */}
       {/* <Counter /> */}
       <main className="flex flex-col items-center m-4 w-[300px] h-[550px]">
-        <Layout.Header />
-        <div>
-          <p>contents</p>
-        </div>
+        <Layout.Header title={page} />
+        <div>{page}</div>
+        {/* <Generate/> */}
+
         <Layout.Footer />
       </main>
       {/* <ModeToggle /> */}
