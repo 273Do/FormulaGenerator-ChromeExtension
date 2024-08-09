@@ -4,7 +4,6 @@ import { Copyright, SquareFunction, Star } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 
 const Footer = () => {
-  // return <div className="bg-blue-400 w-full h-[50px]">Footer</div>;
   const page = useSelector((state: RootState) => state.page.value);
   const dispatch = useDispatch();
 
@@ -13,8 +12,10 @@ const Footer = () => {
       <div className="mx-4 my-1 h-full grid grid-cols-3 gap-2 text-[10px]">
         <div
           className={`${
-            page == "Generate" ? "text-green-400" : " text-muted-foreground"
-          } justify-start flex flex-col items-center transition`}
+            page == "Generate"
+              ? "text-emerald-400 hover:opacity-100"
+              : " text-muted-foreground"
+          } justify-start flex flex-col items-center transition hover:opacity-70`}
           onClick={() => dispatch(updatePage("Generate"))}
         >
           <SquareFunction />
@@ -22,8 +23,10 @@ const Footer = () => {
         </div>
         <div
           className={`${
-            page == "Favorite" ? "text-green-400" : " text-muted-foreground"
-          } justify-start flex flex-col items-center transition`}
+            page == "Favorite"
+              ? "text-emerald-400 hover:opacity-100"
+              : " text-muted-foreground"
+          } justify-start flex flex-col items-center transition hover:opacity-70`}
           onClick={() => dispatch(updatePage("Favorite"))}
         >
           <Star />
@@ -31,8 +34,10 @@ const Footer = () => {
         </div>
         <div
           className={`${
-            page == "Copyright" ? "text-green-400" : " text-muted-foreground"
-          } justify-start flex flex-col items-center transition`}
+            page == "Copyright"
+              ? "text-emerald-400 hover:opacity-100"
+              : " text-muted-foreground"
+          } justify-start flex flex-col items-center transition hover:opacity-70`}
           onClick={() => dispatch(updatePage("Copyright"))}
         >
           <Copyright />

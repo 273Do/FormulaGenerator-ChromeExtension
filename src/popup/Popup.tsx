@@ -11,9 +11,11 @@ import {
 
 import { useEffect, useState } from "react";
 import * as Layout from "./layouts/index";
-import Counter from "./components/Counter/Counter";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
+import Generate from "./components/Generate/Generate";
+import Favorite from "./components/Favorite/Favorite";
+import Copyright from "./components/Copyright/Copyright";
 
 interface MyBucket {
   targetLang: string | null;
@@ -42,29 +44,15 @@ const Popup = () => {
 
   return (
     <>
-      {/* <div className="flex flex-col items-center m-2 w-80 h-80">
-        <p>選択したテキストを次の言語に翻訳</p>
-        <Select value={lang} onValueChange={saveLang}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="言語" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="EN">英語</SelectItem>
-            <SelectItem value="KO">韓国語</SelectItem>
-            <SelectItem value="ZH">中国語</SelectItem>
-            <SelectItem value="JA">日本語</SelectItem>
-          </SelectContent>
-        </Select>
-      </div> */}
-      {/* <Counter /> */}
-      <main className="flex flex-col items-center m-4 w-[300px] h-[550px]">
-        <Layout.Header title={page} />
-        <div>{page}</div>
-        {/* <Generate/> */}
-
+      <main className="flex flex-col items-center w-[320px] h-[570px]">
+        <Layout.Header />
+        <div className="p-4 w-full h-full">
+          {page == "Generate" && <Generate />}
+          {page == "Favorite" && <Favorite />}
+          {page == "Copyright" && <Copyright />}
+        </div>
         <Layout.Footer />
       </main>
-      {/* <ModeToggle /> */}
     </>
   );
 };

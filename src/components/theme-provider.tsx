@@ -69,5 +69,17 @@ export const useTheme = () => {
   if (context === undefined)
     throw new Error("useTheme must be used within a ThemeProvider");
 
-  return context;
+  // return context;
+  // 以下から拡張
+  const { theme, setTheme } = context;
+
+  // 実際のテーマを取得
+  const resolvedTheme =
+    theme === "system"
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light"
+      : theme;
+
+  return { theme, resolvedTheme, setTheme };
 };
