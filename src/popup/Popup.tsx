@@ -44,11 +44,12 @@ const Popup = () => {
 
   return (
     <>
-      <main className="flex flex-col items-center w-[320px] h-[570px]">
+      <main className="flex flex-col items-center w-[320px] h-[570px] font-inter font-semibold">
         <Layout.Header />
-        <div className="p-4 w-full h-full">
+        <div className="h-[70px]"></div>
+        <div className="p-3 w-full h-full">
           {page == "Generate" && <Generate />}
-          {page == "Favorite" && <Favorite />}
+          {page == "Favorites" && <Favorite />}
           {page == "Copyright" && <Copyright />}
         </div>
         <Layout.Footer />

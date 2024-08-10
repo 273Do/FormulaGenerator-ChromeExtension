@@ -8,14 +8,14 @@ const Footer = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="fixed bottom-0 font-inter z-50 w-full h-[60px] border-t border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-4 my-1 h-full grid grid-cols-3 gap-2 text-[10px]">
+    <div className="fixed bottom-0 z-50 w-full h-[60px] border-t border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 font-medium">
+      <div className="mx-4 my-2 h-full grid grid-cols-3 gap-2 text-[10px]">
         <div
           className={`${
             page == "Generate"
               ? "text-emerald-400 hover:opacity-100"
-              : " text-muted-foreground"
-          } justify-start flex flex-col items-center transition hover:opacity-70`}
+              : "text-muted-foreground"
+          } justify-start flex flex-col items-center transition hover:opacity-70 cursor-pointer`}
           onClick={() => dispatch(updatePage("Generate"))}
         >
           <SquareFunction />
@@ -23,21 +23,21 @@ const Footer = () => {
         </div>
         <div
           className={`${
-            page == "Favorite"
+            page == "Favorites"
               ? "text-emerald-400 hover:opacity-100"
-              : " text-muted-foreground"
-          } justify-start flex flex-col items-center transition hover:opacity-70`}
-          onClick={() => dispatch(updatePage("Favorite"))}
+              : "text-muted-foreground"
+          } justify-start flex flex-col items-center transition hover:opacity-70 cursor-pointer`}
+          onClick={() => dispatch(updatePage("Favorites"))}
         >
           <Star />
-          <p>Favorite</p>
+          <p>Favorites</p>
         </div>
         <div
           className={`${
             page == "Copyright"
               ? "text-emerald-400 hover:opacity-100"
-              : " text-muted-foreground"
-          } justify-start flex flex-col items-center transition hover:opacity-70`}
+              : "text-muted-foreground"
+          } justify-start flex flex-col items-center transition hover:opacity-70 cursor-pointer`}
           onClick={() => dispatch(updatePage("Copyright"))}
         >
           <Copyright />

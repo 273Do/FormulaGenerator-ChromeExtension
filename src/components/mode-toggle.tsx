@@ -1,4 +1,4 @@
-import { Moon, Sun, Settings, MonitorSmartphone } from "lucide-react";
+import { Moon, Sun, MonitorSmartphone, Ellipsis } from "lucide-react";
 import { useTheme } from "./theme-provider";
 import {
   DropdownMenu,
@@ -41,9 +41,9 @@ export function ModeToggle() {
     // </DropdownMenu>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Settings className="h-[1.2rem] w-[1.2rem] m-2 hover:opacity-70 transition-all" />
+        <Ellipsis className="h-[1.2rem] w-[1.2rem] m-2 text-muted-foreground hover:opacity-70 transition-all cursor-pointer" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="font-inter">
+      <DropdownMenuContent className="font-inter border border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <DropdownMenuLabel>Theme</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
@@ -70,16 +70,6 @@ export function ModeToggle() {
         <DropdownMenuSeparator />
         <DropdownMenuLabel>Language</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        {/* <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-          <DropdownMenuRadioItem value="en">
-            <Sun className="h-[1.2rem] w-[1.2rem] mr-2 hover:opacity-70 transition-all" />
-            English
-          </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="ja">
-            <Moon className="h-[1.2rem] w-[1.2rem] mr-2 hover:opacity-70 transition-all" />
-            Japanese
-          </DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup> */}
         <div className="flex justify-center items-center space-x-2">
           <Label htmlFor="airplane-mode" className="text-sm font-light">
             日本語

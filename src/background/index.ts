@@ -28,7 +28,7 @@ const bucket = getBucket<MyBucket>("my_bucket", "sync");
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
-    id: "favorite",
+    id: "Favorites",
     title: "お気に入りを確認",
     contexts: ["all"],
   });

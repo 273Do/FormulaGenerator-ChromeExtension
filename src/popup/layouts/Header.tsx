@@ -13,8 +13,8 @@ const Header = () => {
     //     resolvedTheme == "light" && "bg-muted"
     //   } flex p-4 pb-1 w-full h-[60px] justify-between items-center border-b border-border/40 bg-background/95 `}
     // >
-    <div className="flex p-4 pb-1 w-full h-[60px] justify-between items-center border-b border-border/40 bg-background/95 ">
-      <p className="text-3xl font-inter font-semibold tracking-wide">{page}</p>
+    <div className="fixed flex p-4 pb-1 w-full h-[60px] justify-between items-center border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 ">
+      <p className="text-3xl tracking-wide">{page}</p>
       <ModeToggle />
     </div>
   );
