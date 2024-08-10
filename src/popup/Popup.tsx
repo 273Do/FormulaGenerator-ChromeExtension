@@ -44,7 +44,7 @@ const Popup = () => {
 
   return (
     <>
-      <main className="flex flex-col items-center w-[320px] h-[570px] font-inter font-semibold">
+      <main className="flex flex-col items-center w-[320px] h-[530px] font-inter font-semibold  overflow-y-scroll">
         <Layout.Header />
         <div className="h-[70px]"></div>
         <div className="p-3 w-full h-full">
