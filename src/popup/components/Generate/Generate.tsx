@@ -38,12 +38,6 @@ const Generate = () => {
         <div>
           <p className="mt-4 text-lg">Template</p>
           <div className="bg-muted w-full rounded-md px-2 py-1">
-            {/* <div className="w-full h-5 flex justify-between items-center">
-              <p className=" text-xs tracking-wide text-muted-foreground">
-                Order/Combination
-              </p>
-              <ChevronDown className="h-[1.2rem] w-[1.2rem] hover:opacity-70 transition-all text-muted-foreground cursor-pointer" />
-            </div> */}
             <TemplateSelector />
             <Separator
               className={`${resolvedTheme == "dark" && "bg-zinc-700"} my-1`}

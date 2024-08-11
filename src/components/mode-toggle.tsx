@@ -1,4 +1,11 @@
-import { Moon, Sun, MonitorSmartphone, Ellipsis } from "lucide-react";
+import {
+  Moon,
+  Sun,
+  MonitorSmartphone,
+  Ellipsis,
+  SlidersHorizontal,
+  Settings,
+} from "lucide-react";
 import { useTheme } from "./theme-provider";
 import {
   DropdownMenu,
@@ -41,7 +48,7 @@ export function ModeToggle() {
     // </DropdownMenu>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Ellipsis className="h-[1.2rem] w-[1.2rem] m-2 text-muted-foreground hover:opacity-70 transition-all cursor-pointer" />
+        <Settings className="h-[1.2rem] w-[1.2rem] m-2 text-muted-foreground hover:opacity-70 transition-all cursor-pointer" />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="font-inter border border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <DropdownMenuLabel>Theme</DropdownMenuLabel>
