@@ -14,7 +14,7 @@ const Generate = () => {
     <div className="w-full h-full">
       <div className="bg-muted w-full h-32 rounded-md px-2 py-1">
         <div className="w-full h-5 flex justify-between items-center">
-          <p className="text-xs tracking-wide text-emerald-400">Preview</p>
+          <p className="text-xs tracking-wide text-cyan-600">Preview</p>
           {/* <Star className="h-[1.2rem] w-[1.2rem] mt-1 text-muted-foreground hover:opacity-70 transition-all cursor-pointer" /> */}
           {/* <Star
             fill="#34d399"

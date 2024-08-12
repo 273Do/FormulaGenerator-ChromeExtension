@@ -10,8 +10,10 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ListX } from "lucide-react";
+import { useTheme } from "@/components/theme-provider";
 
 const AllFavoriteDelete = () => {
+  const { resolvedTheme } = useTheme();
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -19,7 +21,7 @@ const AllFavoriteDelete = () => {
           <ListX className="h-[1.2rem] w-[1.2rem] mt-1 text-muted-foreground hover:opacity-70 transition-all cursor-pointer" />
         </div>
       </DialogTrigger>
-      <DialogContent className="p-3 w-10/12 font-inter rounded-md border border-border/100 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/40">
+      <DialogContent className="p-3 w-10/12 font-inter rounded-md border border-border/100 bg-background/95 supports-[backdrop-filter]:bg-background/190">
         <DialogHeader className="space-y-0">
           <DialogTitle className="flex items-start flex-col gap-1">
             全削除
@@ -43,7 +45,13 @@ const AllFavoriteDelete = () => {
           {/* <Button type="submit" variant="destructive"> */}
           {/* <Trash className="h-[1.5rem] w-[1.5rem] mt-1 text-destructive hover:opacity-70 transition-all cursor-pointer" /> */}
           {/* </Button> */}
-          <Button type="submit" variant="destructive" className="w-full h-8">
+          <Button
+            type="submit"
+            variant="outline"
+            className={`w-full h-8 hover:bg-red-500 ${
+              resolvedTheme === "light" && " hover:text-secondary"
+            }`}
+          >
             Delete
           </Button>
         </DialogFooter>

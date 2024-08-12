@@ -13,7 +13,7 @@ const Footer = () => {
         <div
           className={`${
             page == "Generate"
-              ? "text-emerald-400 hover:opacity-100"
+              ? "text-cyan-700 hover:opacity-100"
               : "text-muted-foreground"
           } justify-start flex flex-col items-center transition hover:opacity-70 cursor-pointer`}
           onClick={() => dispatch(updatePage("Generate"))}
@@ -24,7 +24,7 @@ const Footer = () => {
         <div
           className={`${
             page == "Favorites"
-              ? "text-emerald-400 hover:opacity-100"
+              ? "text-cyan-700 hover:opacity-100"
               : "text-muted-foreground"
           } justify-start flex flex-col items-center transition hover:opacity-70 cursor-pointer`}
           onClick={() => dispatch(updatePage("Favorites"))}
@@ -35,7 +35,7 @@ const Footer = () => {
         <div
           className={`${
             page == "Copyright"
-              ? "text-emerald-400 hover:opacity-100"
+              ? "text-cyan-600 hover:opacity-100"
               : "text-muted-foreground"
           } justify-start flex flex-col items-center transition hover:opacity-70 cursor-pointer`}
           onClick={() => dispatch(updatePage("Copyright"))}

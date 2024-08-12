@@ -15,8 +15,10 @@ import FavoriteItem from "./FavoriteItem";
 import TextareaAutosize from "react-autosize-textarea";
 import CopySelector from "../CopySelector";
 import { Trash } from "lucide-react";
+import { useTheme } from "@/components/theme-provider";
 
 const FavoritesList = ({ data_count }: { data_count: number }) => {
+  const { resolvedTheme } = useTheme();
   return (
     <>
       {Array.from({ length: data_count }).map((_, index) => (
@@ -26,7 +28,7 @@ const FavoritesList = ({ data_count }: { data_count: number }) => {
               <FavoriteItem index={index} />
             </div>
           </DialogTrigger>
-          <DialogContent className="p-3 w-10/12 font-inter rounded-md border border-border/100 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/40">
+          <DialogContent className="p-3 w-10/12 font-inter rounded-md border border-border/100 bg-background/95 supports-[backdrop-filter]:bg-background/100">
             <DialogHeader className="space-y-0">
               <DialogTitle className="flex items-start flex-col gap-1">
                 {/* <div className="text-2xl font-inter">y=x/2</div> */}
@@ -72,8 +74,11 @@ const FavoritesList = ({ data_count }: { data_count: number }) => {
               {/* </Button> */}
               <Button
                 type="submit"
-                variant="destructive"
-                className="w-full h-8"
+                // variant="destructive"
+                variant="outline"
+                className={`w-full h-8 hover:bg-red-500 ${
+                  resolvedTheme === "light" && " hover:text-secondary"
+                }`}
               >
                 Delete
               </Button>
