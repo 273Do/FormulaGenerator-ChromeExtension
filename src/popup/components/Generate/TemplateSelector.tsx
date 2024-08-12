@@ -20,12 +20,18 @@ export function TemplateSelector() {
           <ChevronDown className="h-[1.2rem] w-[1.2rem] hover:opacity-70 transition-all text-muted-foreground cursor-pointer" />
         </DropdownMenuTrigger>
         <DropdownMenuContent className="h-48 overflow-y-scroll font-inter border border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <DropdownMenuItem>Order</DropdownMenuItem>
-          <DropdownMenuItem>Combination</DropdownMenuItem>
-          <DropdownMenuItem>Order</DropdownMenuItem>
-          <DropdownMenuItem>Combination</DropdownMenuItem>
-          <DropdownMenuItem>Order</DropdownMenuItem>
-          <DropdownMenuItem>Combination</DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer">Order</DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer">
+            Combination
+          </DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer">Order</DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer">
+            Combination
+          </DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer">Order</DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer">
+            Combination
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

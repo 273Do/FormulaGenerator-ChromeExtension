@@ -1,11 +1,10 @@
 import { useTheme } from "@/components/theme-provider";
-import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { Plus, Star } from "lucide-react";
 import React from "react";
 import TextareaAutosize from "react-autosize-textarea";
 import CopySelector from "../CopySelector";
 import { TemplateSelector } from "./TemplateSelector";
+import CreateFavorite from "./CreateFavorite";
 
 const Generate = () => {
   const { resolvedTheme } = useTheme();
@@ -14,14 +13,8 @@ const Generate = () => {
     <div className="w-full h-full">
       <div className="bg-muted w-full h-32 rounded-md px-2 py-1">
         <div className="w-full h-5 flex justify-between items-center">
-          <p className="text-xs tracking-wide text-emerald-400">Preview</p>
-          {/* <Star className="h-[1.2rem] w-[1.2rem] mt-1 text-muted-foreground hover:opacity-70 transition-all cursor-pointer" /> */}
-          {/* <Star
-            fill="#34d399"
-            strokeWidth={0}
-            className="h-[1.2rem] w-[1.2rem] mt-1 text-muted-foreground hover:opacity-70 transition-all cursor-pointer"
-          /> */}
-          <Plus className="h-[1.2rem] w-[1.2rem] mt-1 text-muted-foreground hover:opacity-70 transition-all cursor-pointer" />
+          <p className="text-xs tracking-wide text-cyan-600">Preview</p>
+          <CreateFavorite />
         </div>
         <div className="bg-muted w-full h-24"></div>
       </div>

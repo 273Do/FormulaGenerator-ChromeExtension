@@ -12,9 +12,7 @@ const Favorite = () => {
       {data_count >= 4 && <div className="h-[62px]"></div>}
       <div className="bg-muted w-full rounded-md px-2 py-1">
         <div className="w-full h-5 flex justify-between items-center">
-          <p className="text-xs tracking-wide text-emerald-400">
-            Favorites List
-          </p>
+          <p className="text-xs tracking-wide text-cyan-600">Favorites List</p>
           <AllFavoriteDelete />
         </div>
         {data_count == 0 ? (
