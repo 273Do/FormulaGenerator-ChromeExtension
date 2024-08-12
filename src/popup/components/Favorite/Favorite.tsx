@@ -2,6 +2,7 @@ import { Separator } from "@/components/ui/separator";
 import React from "react";
 import FavoritesList from "./FavoritesList";
 import { ListX } from "lucide-react";
+import AllFavoriteDelete from "./AllFavoriteDelete";
 
 const Favorite = () => {
   let data_count = 10;
@@ -14,7 +15,7 @@ const Favorite = () => {
           <p className="text-xs tracking-wide text-emerald-400">
             Favorites List
           </p>
-          <ListX className="h-[1.2rem] w-[1.2rem] mt-1 text-muted-foreground hover:opacity-70 transition-all cursor-pointer" />
+          <AllFavoriteDelete />
         </div>
         {data_count == 0 ? (
           <p className="m-2 text-center font-inter text-xs font-medium">
