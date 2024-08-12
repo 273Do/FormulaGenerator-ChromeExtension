@@ -1,0 +1,48 @@
+import React from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Plus } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const CreateFavorite = () => {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Plus className="h-[1.2rem] w-[1.2rem] mt-1 text-muted-foreground hover:opacity-70 transition-all cursor-pointer" />
+      </DialogTrigger>
+      <DialogContent className="p-3 w-10/12 font-inter rounded-md border border-border/100 bg-background/95 supports-[backdrop-filter]:bg-background/100">
+        <DialogHeader className="space-y-0">
+          <DialogTitle className="flex items-start flex-col gap-1">
+            {/* <input
+              className="outline-none bg-muted p-1 rounded-md font-light w-10/12 text-sm border"
+              placeholder="Enter Title"
+            /> */}
+            Add Favorite
+          </DialogTitle>
+          <DialogDescription></DialogDescription>
+        </DialogHeader>
+        <div className="text-2xl font-inter font-semibold w-full text-center">
+          y=x/2
+        </div>
+        <DialogFooter className="mt-2 flex flex-row gap-2 items-center">
+          <input
+            className="outline-none bg-muted p-1 rounded-md font-light w-10/12 text-sm border"
+            placeholder="Enter Title"
+          />
+          <Button type="submit" className="h-7">
+            Add
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+export default CreateFavorite;
