@@ -5,7 +5,7 @@ import { SquareArrowOutUpRight } from "lucide-react";
 const Copyright = () => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <img src={FGLogo} alt="" className="rounded-md w-32 p-3" />
+      <img src={FGLogo} alt="" className="rounded-md w-32 p-3 pt-0" />
       <div className="-m-2 mb-1">
         <p className="text-2xl">Formula Generator</p>
         <p className="text-right font-medium -mt-2">Chrome Extension</p>
