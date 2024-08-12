@@ -1,7 +1,18 @@
 {
-  "言語": "Language",
-  "システム": "System",
   "テーマ": "Theme",
   "ライト": "Light",
-  "ダーク": "Dark"
+  "ダーク": "Dark",
+  "システム": "System",
+  "言語": "Language",
+
+  "Generate": "Generate",
+  "Favorites": "Favorites",
+  "Copyright": "Copyright",
+
+  "プレビュー": "Preview",
+  "テンプレート": "Template",
+  "Texを入力": "Enter Tex",
+
+  "Texをコピー": "Tex Copy",
+  "Wordへコピー": "Word Copy"
 }
