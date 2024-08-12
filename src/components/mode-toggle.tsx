@@ -17,12 +17,37 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Switch } from "./ui/switch";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Label } from "./ui/label";
+import { useTranslation } from "react-i18next";
+
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+
+import enJson from "@/utils/locales/en.json";
+import jaJson from "@/utils/locales/ja.json";
+
+i18n.use(initReactI18next).init({
+  resources: {
+    en: { translation: enJson },
+    ja: { translation: jaJson },
+  },
+  // lng: "en",
+  // fallbackLng: "en",
+  // interpolation: { escapeValue: false },
+});
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
+  const [t, i18n] = useTranslation();
+
+  const [lang, setLang] = useState("en");
   const [position, setPosition] = useState(theme);
+  console.log(lang);
+
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+  }, [lang, i18n]);
 
   return (
     <DropdownMenu>
@@ -60,13 +85,17 @@ export function ModeToggle() {
         </DropdownMenuRadioGroup>
         <DropdownMenuSeparator />
         <DropdownMenuSeparator />
-        <DropdownMenuLabel>Language</DropdownMenuLabel>
+        <DropdownMenuLabel>{t("言語")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <div className="flex justify-center items-center space-x-2">
           <Label htmlFor="airplane-mode" className="text-sm font-light">
             日本語
           </Label>
-          <Switch id="airplane-mode" />
+          <Switch
+            id="airplane-mode"
+            checked={lang === "ja"}
+            onCheckedChange={() => setLang(lang === "en" ? "ja" : "en")}
+          />
         </div>
       </DropdownMenuContent>
     </DropdownMenu>
