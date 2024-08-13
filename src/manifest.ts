@@ -21,10 +21,10 @@ const manifest = defineManifest(async (env) => ({
     },
   ],
   host_permissions: ["<all_urls>"],
-  options_ui: {
-    page: "options/options.html",
-    open_in_tab: true,
-  },
+  // options_ui: {
+  //   page: "options/options.html",
+  //   open_in_tab: false,
+  // },
   web_accessible_resources: [
     {
       resources: [

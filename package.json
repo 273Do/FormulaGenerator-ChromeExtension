@@ -91,22 +91,5 @@
     "ts-jest": "^29.1.0",
     "typescript": "4.9.5",
     "vite": "^4.3.9"
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ],
-    "plugins": [
-      [
-        "i18next-extract",
-        {
-          "locales": [
-            "ja",
-            "en"
-          ],
-          "outputPath": "./src/utils/locales/{{locale}}.json"
-        }
-      ]
-    ]
   }
 }
