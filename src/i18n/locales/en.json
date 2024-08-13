@@ -7,7 +7,7 @@
 
   "Generate": "Generate",
   "Favorites": "Favorites",
-  "Copyright": "Copyright",
+  "Credit": "Credit",
 
   "プレビュー": "Preview",
   "テンプレート": "Template",
@@ -28,5 +28,8 @@
   "保存": "Save",
 
   "全削除": "Delete All",
-  "全てのお気に入りを削除します。": "Delete all favorites."
+  "全てのお気に入りを削除します。": "Delete all favorites.",
+
+  "参考元：": "Reference source:",
+  "免責事項": " Neither I, nor any of my associates or any of the organizations to which I belong shall bear any responsibility whatsoever for any damage, loss, or malfunction that may occur as a result of using this creation or the enclosed materials. Please use this product at your own risk."
 }

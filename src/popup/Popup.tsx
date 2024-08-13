@@ -15,7 +15,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import Generate from "./components/Generate/Generate";
 import Favorite from "./components/Favorite/Favorite";
-import Copyright from "./components/Copyright/Copyright";
+import Credit from "./components/Credit/Credit";
 
 interface MyBucket {
   targetLang: string | null;
@@ -50,7 +50,7 @@ const Popup = () => {
         <div className="p-3 w-full h-full">
           {page == "Generate" && <Generate />}
           {page == "Favorites" && <Favorite />}
-          {page == "Copyright" && <Copyright />}
+          {page == "Credit" && <Credit />}
         </div>
         <Layout.Footer />
       </main>

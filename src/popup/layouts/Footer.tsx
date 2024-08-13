@@ -36,14 +36,14 @@ const Footer = () => {
         </div>
         <div
           className={`${
-            page == "Copyright"
+            page == "Credit"
               ? "text-cyan-600 hover:opacity-100"
               : "text-muted-foreground"
           } justify-start flex flex-col items-center transition hover:opacity-70 cursor-pointer`}
-          onClick={() => dispatch(updatePage("Copyright"))}
+          onClick={() => dispatch(updatePage("Credit"))}
         >
           <Copyright />
-          <p>{t("Copyright")}</p>
+          <p>{t("Credit")}</p>
         </div>
       </div>
     </div>
