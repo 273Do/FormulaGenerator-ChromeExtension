@@ -10,8 +10,11 @@ import {
 } from "@/components/ui/dialog";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 const CreateFavorite = () => {
+  const { t } = useTranslation();
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -20,11 +23,7 @@ const CreateFavorite = () => {
       <DialogContent className="p-3 w-10/12 font-inter rounded-md border border-border/100 bg-background/95 supports-[backdrop-filter]:bg-background/100">
         <DialogHeader className="space-y-0">
           <DialogTitle className="flex items-start flex-col gap-1">
-            {/* <input
-              className="outline-none bg-muted p-1 rounded-md font-light w-10/12 text-sm border"
-              placeholder="Enter Title"
-            /> */}
-            Add Favorite
+            {t("お気に入り追加")}
           </DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
@@ -34,10 +33,10 @@ const CreateFavorite = () => {
         <DialogFooter className="mt-2 flex flex-row gap-2 items-center">
           <input
             className="outline-none bg-muted p-1 rounded-md font-light w-10/12 text-sm border"
-            placeholder="Enter Title"
+            placeholder={t("タイトルを入力")}
           />
           <Button type="submit" className="h-7">
-            Add
+            {t("追加")}
           </Button>
         </DialogFooter>
       </DialogContent>
