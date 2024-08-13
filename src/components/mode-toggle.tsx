@@ -10,16 +10,35 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Switch } from "./ui/switch";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Label } from "./ui/label";
 
 import { useTranslation } from "react-i18next";
+import { bucket } from "@/utils/storage";
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
   const [t, i18n] = useTranslation();
 
   const [position, setPosition] = useState(theme);
+  const [lang, setLang] = useState<string>("en");
+
+  useEffect(() => {
+    (async () => {
+      const value = await bucket.get();
+      console.log(value);
+      if (value) {
+        setLang(value.lang);
+        i18n.changeLanguage(value.lang);
+      }
+    })();
+  }, []);
+
+  const saveLang = (lang: string) => {
+    bucket.set({ lang: lang });
+    setLang(lang);
+    i18n.changeLanguage(lang);
+  };
 
   return (
     <DropdownMenu>
@@ -65,9 +84,10 @@ export function ModeToggle() {
           </Label>
           <Switch
             id="airplane-mode"
-            checked={i18n.language === "ja"}
+            checked={lang === "ja"}
             onCheckedChange={() =>
-              i18n.changeLanguage(i18n.language === "en" ? "ja" : "en")
+              // i18n.changeLanguage(i18n.language === "en" ? "ja" : "en")
+              saveLang(lang === "en" ? "ja" : "en")
             }
           />
         </div>

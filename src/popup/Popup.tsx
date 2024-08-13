@@ -6,12 +6,6 @@ import Generate from "./components/Generate/Generate";
 import Favorite from "./components/Favorite/Favorite";
 import Credit from "./components/Credit/Credit";
 
-interface MyBucket {
-  lang: string | null;
-}
-
-const bucket = getBucket<MyBucket>("my_bucket", "sync");
-
 const Popup = () => {
   // const [lang, setLang] = useState<string | null>(null);
 
