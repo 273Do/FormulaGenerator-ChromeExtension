@@ -11,9 +11,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { ListX } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
+import { useTranslation } from "react-i18next";
 
 const AllFavoriteDelete = () => {
   const { resolvedTheme } = useTheme();
+  const { t } = useTranslation();
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -24,11 +27,11 @@ const AllFavoriteDelete = () => {
       <DialogContent className="p-3 w-10/12 font-inter rounded-md border border-border/100 bg-background/95 supports-[backdrop-filter]:bg-background/100">
         <DialogHeader className="space-y-0">
           <DialogTitle className="flex items-start flex-col gap-1">
-            全削除
+            {t("全削除")}
           </DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
-        <div>全てのお気に入りを削除します</div>
+        <div>{t("全てのお気に入りを削除します。")}</div>
         <DialogFooter className="mt-2 flex flex-row gap-2 items-center">
           <Button
             type="submit"
@@ -37,7 +40,7 @@ const AllFavoriteDelete = () => {
               resolvedTheme === "light" && " hover:text-secondary"
             }`}
           >
-            Delete
+            {t("削除")}
           </Button>
         </DialogFooter>
       </DialogContent>

@@ -1,11 +1,13 @@
 import { updatePage } from "@/redux/pageSlice";
 import { RootState } from "@/redux/store";
 import { Copyright, SquareFunction, Star } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
 const Footer = () => {
   const page = useSelector((state: RootState) => state.page.value);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   return (
     <div className="fixed bottom-0 z-50 w-full h-[60px] border-t border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 font-medium">
@@ -19,7 +21,7 @@ const Footer = () => {
           onClick={() => dispatch(updatePage("Generate"))}
         >
           <SquareFunction />
-          <p>Generate</p>
+          <p>{t("Generate")}</p>
         </div>
         <div
           className={`${
@@ -30,18 +32,18 @@ const Footer = () => {
           onClick={() => dispatch(updatePage("Favorites"))}
         >
           <Star />
-          <p>Favorites</p>
+          <p>{t("Favorites")}</p>
         </div>
         <div
           className={`${
-            page == "Copyright"
+            page == "Credit"
               ? "text-cyan-600 hover:opacity-100"
               : "text-muted-foreground"
           } justify-start flex flex-col items-center transition hover:opacity-70 cursor-pointer`}
-          onClick={() => dispatch(updatePage("Copyright"))}
+          onClick={() => dispatch(updatePage("Credit"))}
         >
           <Copyright />
-          <p>Copyright</p>
+          <p>{t("Credit")}</p>
         </div>
       </div>
     </div>

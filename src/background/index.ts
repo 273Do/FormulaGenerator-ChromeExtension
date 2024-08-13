@@ -34,7 +34,7 @@ chrome.runtime.onInstalled.addListener(() => {
   });
   chrome.contextMenus.create({
     id: "translation",
-    title: "選択したテキストを翻訳",
+    title: "選択したテキストをお気に入りに追加",
     contexts: ["selection"],
   });
 });

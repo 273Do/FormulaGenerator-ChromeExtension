@@ -1,0 +1,35 @@
+{
+  "テーマ": "Theme",
+  "ライト": "Light",
+  "ダーク": "Dark",
+  "システム": "System",
+  "言語": "Language",
+
+  "Generate": "Generate",
+  "Favorites": "Favorites",
+  "Credit": "Credit",
+
+  "プレビュー": "Preview",
+  "テンプレート": "Template",
+  "Texを入力": "Enter Tex",
+
+  "Texをコピー": "Tex Copy",
+  "Wordへコピー": "Word Copy",
+
+  "お気に入り追加": "Add to Favorites",
+  "追加": "Add",
+
+  "タイトルを入力": "Enter Title",
+
+  "お気に入りリスト": "Favorites List",
+  "お気に入りデータがありません。": "There is no favorite data.",
+
+  "削除": "Delete",
+  "保存": "Save",
+
+  "全削除": "Delete All",
+  "全てのお気に入りを削除します。": "Delete all favorites.",
+
+  "参考元：": "Reference source:",
+  "免責事項": " Neither I, nor any of my associates or any of the organizations to which I belong shall bear any responsibility whatsoever for any damage, loss, or malfunction that may occur as a result of using this creation or the enclosed materials. Please use this product at your own risk."
+}

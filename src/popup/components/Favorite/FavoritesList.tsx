@@ -14,9 +14,12 @@ import FavoriteItem from "./FavoriteItem";
 import TextareaAutosize from "react-autosize-textarea";
 import CopySelector from "../CopySelector";
 import { useTheme } from "@/components/theme-provider";
+import { useTranslation } from "react-i18next";
 
 const FavoritesList = ({ data_count }: { data_count: number }) => {
   const { resolvedTheme } = useTheme();
+  const { t } = useTranslation();
+
   return (
     <>
       {Array.from({ length: data_count }).map((_, index) => (
@@ -32,7 +35,7 @@ const FavoritesList = ({ data_count }: { data_count: number }) => {
                 <input
                   className="outline-none bg-muted p-1 rounded-md border"
                   defaultValue={"Title"}
-                  placeholder="Enter Title"
+                  placeholder={t("タイトルを入力")}
                 />
                 <p className="font-inter text-xs text-muted-foreground">
                   yyyy/mm/dd
@@ -47,7 +50,7 @@ const FavoritesList = ({ data_count }: { data_count: number }) => {
               <TextareaAutosize
                 className="p-1 border text-primary bg-muted w-full h-6 rounded-md font-light pr-6 pl-2 -mr-8 text-sm mt-[2px] outline-none"
                 onResize={(e) => {}}
-                placeholder="Enter Tex"
+                placeholder={t("Texを入力")}
                 maxRows={5}
                 defaultValue={"y=x/2"}
               />
@@ -61,10 +64,10 @@ const FavoritesList = ({ data_count }: { data_count: number }) => {
                   resolvedTheme === "light" && " hover:text-secondary"
                 }`}
               >
-                Delete
+                {t("削除")}
               </Button>
               <Button type="submit" className="w-full h-8">
-                Save
+                {t("保存")}
               </Button>
             </DialogFooter>
           </DialogContent>
