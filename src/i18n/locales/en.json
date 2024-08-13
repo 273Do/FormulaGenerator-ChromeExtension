@@ -19,5 +19,14 @@
   "お気に入り追加": "Add to Favorites",
   "追加": "Add",
 
-  "タイトルを入力": "Enter Title"
+  "タイトルを入力": "Enter Title",
+
+  "お気に入りリスト": "Favorites List",
+  "お気に入りデータがありません。": "There is no favorite data.",
+
+  "削除": "Delete",
+  "保存": "Save",
+
+  "全削除": "Delete All",
+  "全てのお気に入りを削除します。": "Delete all favorites."
 }
