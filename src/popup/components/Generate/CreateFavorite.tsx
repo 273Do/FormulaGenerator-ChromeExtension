@@ -8,30 +8,17 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
-import { MathJax, MathJaxContext } from "better-react-mathjax";
 
-const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
+const CreateFavorite = () => {
   const { t } = useTranslation();
 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <span className="w-full h-full">
-          <MathJaxContext src="../../../mathjax/es5/tex-chtml.js">
-            <MathJax
-              dynamic
-              className={`text-sm w-full h-full overflow-scroll cursor-pointer hover:opacity-70 transition-all`}
-            >
-              {`$$
-              \\begin{aligned}
-              ${currentValue}
-              \\end{aligned}
-              $$`}
-            </MathJax>
-          </MathJaxContext>
-        </span>
+        <Plus className="h-[1.2rem] w-[1.2rem] mt-1 text-muted-foreground hover:opacity-70 transition-all cursor-pointer" />
       </DialogTrigger>
       <DialogContent className="p-3 w-10/12 font-inter rounded-md border border-border/100 bg-background/95 supports-[backdrop-filter]:bg-background/100">
         <DialogHeader className="space-y-0">

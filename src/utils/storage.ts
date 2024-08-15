@@ -1,10 +1,15 @@
 import { getBucket } from "@extend-chrome/storage";
 
-interface MyBucket {
+interface SettingBucket {
   lang: string;
+  zoom: number;
+}
+
+interface FormulaBucket {
   formula: string;
 }
 
-const bucket = getBucket<MyBucket>("my_bucket", "sync");
+const setting_bucket = getBucket<SettingBucket>("setting_bucket", "sync");
+const formula_bucket = getBucket<FormulaBucket>("formula_bucket", "sync");
 
-export { bucket };
+export { setting_bucket, formula_bucket };

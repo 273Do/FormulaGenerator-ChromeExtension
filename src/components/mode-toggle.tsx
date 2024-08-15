@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import { Label } from "./ui/label";
 
 import { useTranslation } from "react-i18next";
-import { bucket } from "@/utils/storage";
+import { setting_bucket } from "@/utils/storage";
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
@@ -24,7 +24,7 @@ export function ModeToggle() {
 
   useEffect(() => {
     (async () => {
-      const value = await bucket.get();
+      const value = await setting_bucket.get();
       if (value) {
         i18n.changeLanguage(value.lang);
       }
@@ -32,7 +32,7 @@ export function ModeToggle() {
   }, []);
 
   const saveLang = (lang: string) => {
-    bucket.set({ lang: lang });
+    setting_bucket.set({ lang: lang });
     i18n.changeLanguage(lang);
   };
 
