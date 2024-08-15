@@ -21,14 +21,11 @@ export function ModeToggle() {
   const [t, i18n] = useTranslation();
 
   const [position, setPosition] = useState(theme);
-  const [lang, setLang] = useState<string>("en");
 
   useEffect(() => {
     (async () => {
       const value = await bucket.get();
-      console.log(value);
       if (value) {
-        setLang(value.lang);
         i18n.changeLanguage(value.lang);
       }
     })();
@@ -36,7 +33,6 @@ export function ModeToggle() {
 
   const saveLang = (lang: string) => {
     bucket.set({ lang: lang });
-    setLang(lang);
     i18n.changeLanguage(lang);
   };
 
@@ -84,10 +80,10 @@ export function ModeToggle() {
           </Label>
           <Switch
             id="airplane-mode"
-            checked={lang === "ja"}
-            onCheckedChange={() =>
+            checked={i18n.language === "ja"}
+            onCheckedChange={
+              () => saveLang(i18n.language === "en" ? "ja" : "en")
               // i18n.changeLanguage(i18n.language === "en" ? "ja" : "en")
-              saveLang(lang === "en" ? "ja" : "en")
             }
           />
         </div>
