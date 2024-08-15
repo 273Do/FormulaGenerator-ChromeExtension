@@ -10,6 +10,8 @@ import { formula_bucket, setting_bucket } from "@/utils/storage";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import useZoomSetting from "@/hooks/useZoomSetting";
 import useSaveFormula from "@/hooks/useSaveFormula";
+import Highlight from "react-highlight";
+import "@/highlight/docco.css";
 
 // const mathJaxConfig = {
 //   loader: { load: ["input/asciimath"] },
@@ -57,14 +59,14 @@ const Generate = () => {
           </p>
           {/* <div className="flex gap-1"> */}
           {/* <Maximize2 className="h-[1.0rem] w-[1.0rem] mt-1 text-muted-foreground hover:opacity-70 transition-all cursor-pointer" /> */}
-          <CreateFavorite />
+          <CreateFavorite currentValue={currentValue} />
           {/* </div> */}
         </div>
         <div className="flex flex-col items-end justify-end w-full h-24">
           <MathJaxContext src="../../../mathjax/es5/tex-chtml.js">
             <MathJax
               dynamic
-              className={`${zoomSetting} w-full h-full overflow-scroll transition-all`}
+              className={`${zoomSetting} w-full h-full overflow-scroll`}
               onClick={() => saveZoom()}
             >
               {`$$
@@ -88,6 +90,7 @@ const Generate = () => {
           />
           <CopySelector className="mx-2" />
         </div>
+
         <div>
           <p className="mt-4 text-lg">{t("テンプレート")}</p>
           <div className="bg-muted w-full rounded-md px-2 py-1">

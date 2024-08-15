@@ -11,8 +11,9 @@ import {
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import { MathJax, MathJaxContext } from "better-react-mathjax";
 
-const CreateFavorite = () => {
+const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
   const { t } = useTranslation();
 
   return (
@@ -27,8 +28,22 @@ const CreateFavorite = () => {
           </DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
-        <div className="text-2xl font-inter font-semibold w-full text-center">
-          y=x/2
+        <div className=" overflow-scroll h-24 text-2xl font-inter font-semibold w-full text-center">
+          {/* y=x/2 */}
+          <MathJaxContext src="../../../mathjax/es5/tex-chtml.js">
+            <MathJax
+              dynamic
+              // className={`${zoomSetting} w-full h-full overflow-scroll`}
+              className={`text-base w-full pointer-events-none`}
+              // onClick={() => saveZoom()}
+            >
+              {`$$
+              \\begin{aligned}
+              ${currentValue}
+              \\end{aligned}
+              $$`}
+            </MathJax>
+          </MathJaxContext>
         </div>
         <DialogFooter className="mt-2 flex flex-row gap-2 items-center">
           <input
