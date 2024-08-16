@@ -10,23 +10,26 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import FavoriteItem from "./FavoriteItem";
 import TextareaAutosize from "react-autosize-textarea";
 import CopySelector from "../CopySelector";
 import { useTheme } from "@/components/theme-provider";
 import { useTranslation } from "react-i18next";
+import { FavoriteItemObj } from "@/utils/storage";
+import FavoriteItem from "./FavoriteItem";
+import { MathJax, MathJaxContext } from "better-react-mathjax";
 
-const FavoritesList = ({ data_count }: { data_count: number }) => {
+const FavoritesList = ({ data }: { data: FavoriteItemObj[] }) => {
+  console.log(data);
   const { resolvedTheme } = useTheme();
   const { t } = useTranslation();
 
   return (
     <>
-      {Array.from({ length: data_count }).map((_, index) => (
-        <Dialog key={index}>
+      {data.map((item: FavoriteItemObj) => (
+        <Dialog key={item.id}>
           <DialogTrigger asChild>
             <div>
-              <FavoriteItem index={index} />
+              <FavoriteItem data={item} />
             </div>
           </DialogTrigger>
           <DialogContent className="p-3 w-10/12 font-inter rounded-md border border-border/100 bg-background/95 supports-[backdrop-filter]:bg-background/100">
@@ -34,17 +37,25 @@ const FavoritesList = ({ data_count }: { data_count: number }) => {
               <DialogTitle className="flex items-start flex-col gap-1">
                 <input
                   className="outline-none bg-muted p-1 rounded-md border"
-                  defaultValue={"Title"}
+                  defaultValue={item.title}
                   placeholder={t("タイトルを入力")}
                 />
                 <p className="font-inter text-xs text-muted-foreground">
-                  yyyy/mm/dd
+                  {item.createdAt}
                 </p>
               </DialogTitle>
               <DialogDescription></DialogDescription>
             </DialogHeader>
-            <div className="text-2xl font-inter font-semibold w-full text-center">
-              y=x/2
+            <div className="text-xs font-inter font-semibold w-full text-center">
+              <MathJaxContext src="../../../mathjax/es5/tex-chtml.js">
+                <MathJax dynamic className={"w-full h-full overflow-scroll"}>
+                  {`$$
+              \\begin{aligned}
+              ${item.formula}
+              \\end{aligned}
+              $$`}
+                </MathJax>
+              </MathJaxContext>
             </div>
             <div className="flex items-center">
               <TextareaAutosize
@@ -52,7 +63,7 @@ const FavoritesList = ({ data_count }: { data_count: number }) => {
                 onResize={(e) => {}}
                 placeholder={t("Texを入力")}
                 maxRows={5}
-                defaultValue={"y=x/2"}
+                defaultValue={item.formula}
               />
               <CopySelector className="mx-2" />
             </div>

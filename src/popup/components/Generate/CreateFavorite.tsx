@@ -41,20 +41,28 @@ const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
         ("0" + nowDate.getSeconds()).slice(-2) +
         "." +
         nowDate.getMilliseconds();
+
       const newFavorite = {
+        id: crypto.randomUUID(),
         title: ref.current.value,
         formula: currentValue,
         createdAt: date,
       };
-      const id = crypto.randomUUID();
-      favorite_list.favorites[id] = newFavorite;
-      formula_bucket.set(favorite_list);
+
+      // 保存処理
+      if (favorite_list.favorites) {
+        favorite_list.favorites.push(newFavorite);
+        formula_bucket.set({ favorites: favorite_list.favorites });
+      } else {
+        formula_bucket.set({ favorites: [newFavorite] });
+      }
     }
   };
 
   const test = async () => {
     const favorite_list = await formula_bucket.get("favorites");
     console.log(favorite_list.favorites);
+    formula_bucket.remove("favorites");
   };
 
   return (

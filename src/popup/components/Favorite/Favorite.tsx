@@ -1,17 +1,27 @@
 import { Separator } from "@/components/ui/separator";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FavoritesList from "./FavoritesList";
-import { ListX } from "lucide-react";
 import AllFavoriteDelete from "./AllFavoriteDelete";
 import { useTranslation } from "react-i18next";
+import { FavoriteItemObj, formula_bucket } from "@/utils/storage";
 
 const Favorite = () => {
-  let data_count = 10;
+  const [data, setData] = useState<FavoriteItemObj[]>([]);
+  // const [dataLength, setDataLength] = useState<number>(0);
   const { t } = useTranslation();
+
+  useEffect(() => {
+    (async () => {
+      const favorite_list = await formula_bucket.get("favorites");
+      if (favorite_list.favorites) setData(favorite_list.favorites);
+    })();
+  }, []);
+
+  //Object.keys(favorite_list.favorites).length
 
   return (
     <div className="w-full h-full">
-      {data_count >= 4 && <div className="h-[62px]"></div>}
+      {data.length >= 4 && <div className="h-[62px]"></div>}
       <div className="bg-muted w-full rounded-md px-2 py-1">
         <div className="w-full h-5 flex justify-between items-center">
           <p className="text-xs tracking-wide text-cyan-600">
@@ -19,12 +29,12 @@ const Favorite = () => {
           </p>
           <AllFavoriteDelete />
         </div>
-        {data_count == 0 ? (
+        {data == undefined ? (
           <p className="m-2 text-center font-inter text-xs font-medium">
             {t("お気に入りデータがありません。")}
           </p>
         ) : (
-          <FavoritesList data_count={data_count} />
+          <FavoritesList data={data} />
         )}
       </div>
       <div className="h-[70px]"></div>
