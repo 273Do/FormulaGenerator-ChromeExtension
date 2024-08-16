@@ -7,6 +7,13 @@ interface SettingBucket {
 
 interface FormulaBucket {
   formula: string;
+  favorites: {
+    [key: string]: {
+      title: string;
+      formula: string;
+      createdAt: string;
+    };
+  };
 }
 
 const setting_bucket = getBucket<SettingBucket>("setting_bucket", "sync");
