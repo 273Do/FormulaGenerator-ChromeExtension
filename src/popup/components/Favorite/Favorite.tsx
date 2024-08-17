@@ -4,24 +4,28 @@ import FavoritesList from "./FavoritesList";
 import AllFavoriteDelete from "./AllFavoriteDelete";
 import { useTranslation } from "react-i18next";
 import { FavoriteItemObj, formula_bucket } from "@/utils/storage";
+import { RootState } from "@/redux/store";
+import { useSelector } from "react-redux";
 
 const Favorite = () => {
-  const [data, setData] = useState<FavoriteItemObj[]>([]);
+  // const [data, setData] = useState<FavoriteItemObj[]>([]);
   // const [dataLength, setDataLength] = useState<number>(0);
   const { t } = useTranslation();
 
-  useEffect(() => {
-    (async () => {
-      const favorite_list = await formula_bucket.get("favorites");
-      if (favorite_list.favorites) setData(favorite_list.favorites);
-    })();
-  }, []);
+  const data = useSelector((state: RootState) => state.formula.formula_list);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const favorite_list = await formula_bucket.get("favorites");
+  //     if (favorite_list.favorites) setData(favorite_list.favorites);
+  //   })();
+  // }, []);
 
   //Object.keys(favorite_list.favorites).length
 
   return (
     <div className="w-full h-full">
-      {data.length >= 4 && <div className="h-[62px]"></div>}
+      {data.length >= 6 && <div className="h-[62px]"></div>}
       <div className="bg-muted w-full rounded-md px-2 py-1">
         <div className="w-full h-5 flex justify-between items-center">
           <p className="text-xs tracking-wide text-cyan-600">

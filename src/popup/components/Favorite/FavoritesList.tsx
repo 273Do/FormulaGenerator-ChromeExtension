@@ -19,7 +19,6 @@ import FavoriteItem from "./FavoriteItem";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 
 const FavoritesList = ({ data }: { data: FavoriteItemObj[] }) => {
-  console.log(data);
   const { resolvedTheme } = useTheme();
   const { t } = useTranslation();
 
@@ -46,9 +45,12 @@ const FavoritesList = ({ data }: { data: FavoriteItemObj[] }) => {
               </DialogTitle>
               <DialogDescription></DialogDescription>
             </DialogHeader>
-            <div className="text-xs font-inter font-semibold w-full text-center">
+            <div className="max-h-60 w-60 text-xs font-inter font-semibold text-center">
               <MathJaxContext src="../../../mathjax/es5/tex-chtml.js">
-                <MathJax dynamic className={"w-full h-full overflow-scroll"}>
+                <MathJax
+                  dynamic
+                  className="text-xs w-full h-full overflow-scroll"
+                >
                   {`$$
               \\begin{aligned}
               ${item.formula}

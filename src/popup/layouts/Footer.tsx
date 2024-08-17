@@ -1,6 +1,9 @@
+import { setFormulaList } from "@/redux/formulaSlice";
 import { updatePage } from "@/redux/pageSlice";
 import { RootState } from "@/redux/store";
+import { formula_bucket } from "@/utils/storage";
 import { Copyright, SquareFunction, Star } from "lucide-react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -8,6 +11,15 @@ const Footer = () => {
   const page = useSelector((state: RootState) => state.page.value);
   const dispatch = useDispatch();
   const { t } = useTranslation();
+
+  useEffect(() => {
+    (async () => {
+      const favorite_list = await formula_bucket.get("favorites");
+      if (favorite_list.favorites) {
+        dispatch(setFormulaList(favorite_list.favorites));
+      }
+    })();
+  }, []);
 
   return (
     <div className="fixed bottom-0 z-50 w-full h-[60px] border-t border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 font-medium">

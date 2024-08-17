@@ -14,10 +14,18 @@ import { useTranslation } from "react-i18next";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { formula_bucket } from "@/utils/storage";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import { addFormulaList } from "@/redux/formulaSlice";
 
 const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
   const { t } = useTranslation();
   const ref = useRef<HTMLInputElement>(null);
+
+  // const formula_list = useSelector(
+  //   (state: RootState) => state.formula.formula_list
+  // );
+  const dispatch = useDispatch();
 
   const handleClick = async () => {
     const favorite_list = await formula_bucket.get("favorites");
@@ -52,17 +60,22 @@ const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
       // 保存処理
       if (favorite_list.favorites) {
         favorite_list.favorites.push(newFavorite);
+        // console.log(favorite_list.favorites);
         formula_bucket.set({ favorites: favorite_list.favorites });
       } else {
         formula_bucket.set({ favorites: [newFavorite] });
       }
+
+      dispatch(addFormulaList(newFavorite));
     }
   };
 
   const test = async () => {
     const favorite_list = await formula_bucket.get("favorites");
+    // console.log(favorite_list.favorites);
+    // formula_bucket.remove("favorites");
+    // console.log(formula_list);
     console.log(favorite_list.favorites);
-    formula_bucket.remove("favorites");
   };
 
   return (

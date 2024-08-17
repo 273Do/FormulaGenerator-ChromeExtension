@@ -13,14 +13,18 @@ import { ListX } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { useTranslation } from "react-i18next";
 import { formula_bucket } from "@/utils/storage";
+import { useDispatch } from "react-redux";
+import { clearFormulaList } from "@/redux/formulaSlice";
 
 const AllFavoriteDelete = () => {
   const { resolvedTheme } = useTheme();
   const { t } = useTranslation();
 
+  const dispatch = useDispatch();
+
   const deleteAllFavorite = async () => {
     await formula_bucket.remove("favorites");
-    // page全体をリロードするにはreduxを使うべきか
+    dispatch(clearFormulaList());
   };
 
   return (
