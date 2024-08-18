@@ -22,18 +22,12 @@ const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
   const { t } = useTranslation();
   const ref = useRef<HTMLInputElement>(null);
 
-  // const formula_list = useSelector(
-  //   (state: RootState) => state.formula.formula_list
-  // );
   const dispatch = useDispatch();
 
   const handleClick = async () => {
     const favorite_list = await formula_bucket.get("favorites");
 
     if (ref.current?.value) {
-      // console.log(ref.current.value);
-      // console.log(currentValue);
-
       const nowDate = new Date();
       const date =
         nowDate.getFullYear() +
@@ -60,7 +54,6 @@ const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
       // 保存処理
       if (favorite_list.favorites) {
         favorite_list.favorites.push(newFavorite);
-        // console.log(favorite_list.favorites);
         formula_bucket.set({ favorites: favorite_list.favorites });
       } else {
         formula_bucket.set({ favorites: [newFavorite] });
@@ -105,11 +98,7 @@ const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
               className={`text-base w-full pointer-events-none`}
               // onClick={() => saveZoom()}
             >
-              {`$$
-              \\begin{aligned}
-              ${currentValue}
-              \\end{aligned}
-              $$`}
+              {`$$${currentValue}$$`}
             </MathJax>
           </MathJaxContext>
         </div>

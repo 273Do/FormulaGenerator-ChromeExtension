@@ -31,17 +31,21 @@ export const formulaSlice = createSlice({
         state.formula_list[index] = action.payload;
       }
     },
-    clearFormulaList: (state) => {
-      state.formula_list = [];
-    },
     removeFormula: (state, action) => {
       state.formula_list = state.formula_list.filter(
         (item) => item.id !== action.payload
       );
     },
+    clearFormulaList: (state) => {
+      state.formula_list = [];
+    },
   },
 });
 
-export const { setFormulaList, addFormulaList, clearFormulaList } =
-  formulaSlice.actions;
+export const {
+  setFormulaList,
+  addFormulaList,
+  removeFormula,
+  clearFormulaList,
+} = formulaSlice.actions;
 export default formulaSlice.reducer;

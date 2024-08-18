@@ -17,6 +17,7 @@ const Footer = () => {
       const favorite_list = await formula_bucket.get("favorites");
       if (favorite_list.favorites) {
         dispatch(setFormulaList(favorite_list.favorites));
+        console.log(favorite_list.favorites);
       }
     })();
   }, []);

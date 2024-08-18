@@ -54,11 +54,7 @@ const Generate = () => {
               className={`${zoomSetting} w-full h-full overflow-scroll`}
               onClick={() => saveZoom()}
             >
-              {`$$
-              \\begin{aligned}
-              ${currentValue}
-              \\end{aligned}
-              $$`}
+              {`$$${currentValue}$$`}
             </MathJax>
           </MathJaxContext>
         </div>
