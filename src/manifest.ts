@@ -31,6 +31,7 @@ const manifest = defineManifest(async (env) => ({
         // this file is web accessible; it supports HMR b/c it's declared in `rollupOptions.input`
         "welcome/welcome.html",
       ],
+      // matches: ["<all_urls>"],
       matches: ["<all_urls>"],
     },
   ],
@@ -50,6 +51,10 @@ const manifest = defineManifest(async (env) => ({
     "128": "images/FormulaGenerator_128.png",
   },
   permissions: ["storage", "tabs", "contextMenus"],
+  // content_security_policy: {
+  //   extension_pages:
+  //     "script-src 'self' https://cdnjs.cloudflare.com; object-src 'self'",
+  // },
 }));
 
 export default manifest;
