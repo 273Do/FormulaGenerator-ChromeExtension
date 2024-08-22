@@ -13,16 +13,61 @@ import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { DialogClose } from "@radix-ui/react-dialog";
+import { formula_bucket } from "@/utils/storage";
+import { useDispatch, useSelector } from "react-redux";
+import { addFormulaList } from "@/redux/formulaSlice";
 
 const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
   const { t } = useTranslation();
   const ref = useRef<HTMLInputElement>(null);
 
-  const handleClick = () => {
+  const dispatch = useDispatch();
+
+  const handleClick = async () => {
+    const favorite_list = await formula_bucket.get("favorites");
+
     if (ref.current?.value) {
-      console.log(ref.current.value);
-      console.log(currentValue);
+      const nowDate = new Date();
+      const date =
+        nowDate.getFullYear() +
+        "/" +
+        ("0" + (nowDate.getMonth() + 1)).slice(-2) +
+        "/" +
+        ("0" + nowDate.getDate()).slice(-2) +
+        " " +
+        ("0" + nowDate.getHours()).slice(-2) +
+        ":" +
+        ("0" + nowDate.getMinutes()).slice(-2) +
+        ":" +
+        ("0" + nowDate.getSeconds()).slice(-2) +
+        "." +
+        nowDate.getMilliseconds();
+
+      const newFavorite = {
+        id: crypto.randomUUID(),
+        title: ref.current.value,
+        formula: currentValue,
+        createdAt: date,
+      };
+
+      // 保存処理
+      if (favorite_list.favorites) {
+        favorite_list.favorites.push(newFavorite);
+        formula_bucket.set({ favorites: favorite_list.favorites });
+      } else {
+        formula_bucket.set({ favorites: [newFavorite] });
+      }
+
+      dispatch(addFormulaList(newFavorite));
     }
+  };
+
+  const test = async () => {
+    const favorite_list = await formula_bucket.get("favorites");
+    // console.log(favorite_list.favorites);
+    // formula_bucket.remove("favorites");
+    // console.log(formula_list);
+    console.log(favorite_list.favorites);
   };
 
   return (
@@ -52,11 +97,7 @@ const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
               className={`text-base w-full pointer-events-none`}
               // onClick={() => saveZoom()}
             >
-              {`$$
-              \\begin{aligned}
-              ${currentValue}
-              \\end{aligned}
-              $$`}
+              {`$$${currentValue}$$`}
             </MathJax>
           </MathJaxContext>
         </div>
@@ -71,6 +112,7 @@ const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
               {t("追加")}
             </Button>
           </DialogClose>
+          <button onClick={test}>確認</button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

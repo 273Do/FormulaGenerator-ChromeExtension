@@ -10,22 +10,7 @@ import { formula_bucket, setting_bucket } from "@/utils/storage";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import useZoomSetting from "@/hooks/useZoomSetting";
 import useSaveFormula from "@/hooks/useSaveFormula";
-import Highlight from "react-highlight";
 import "@/highlight/docco.css";
-
-// const mathJaxConfig = {
-//   loader: { load: ["input/asciimath"] },
-//   // tex: {
-//   //   inlineMath: [
-//   //     ["$", "$"],
-//   //     ["\\(", "\\)"],
-//   //   ],
-//   //   packages: { "[+]": ["asciimath"] },
-//   // },
-//   // chtml: {
-//   //   fontURL: "../../../mathjax/woff-v2/MathJax_SansSerif-Italic.woff", // ローカルに配置したフォントパスに合わせます
-//   // },
-// };
 
 const Generate = () => {
   const { resolvedTheme } = useTheme();
@@ -69,11 +54,7 @@ const Generate = () => {
               className={`${zoomSetting} w-full h-full overflow-scroll`}
               onClick={() => saveZoom()}
             >
-              {`$$
-              \\begin{aligned}
-              ${currentValue}
-              \\end{aligned}
-              $$`}
+              {`$$${currentValue}$$`}
             </MathJax>
           </MathJaxContext>
         </div>
