@@ -45,6 +45,7 @@ export const formulaSlice = createSlice({
 export const {
   setFormulaList,
   addFormulaList,
+  updateFormula,
   removeFormula,
   clearFormulaList,
 } = formulaSlice.actions;

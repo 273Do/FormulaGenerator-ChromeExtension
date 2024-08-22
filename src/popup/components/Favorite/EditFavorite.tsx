@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import CopySelector from "../CopySelector";
 import { Button } from "@/components/ui/button";
 import { FavoriteItemObj, formula_bucket } from "@/utils/storage";
-import { removeFormula } from "@/redux/formulaSlice";
+import { removeFormula, updateFormula } from "@/redux/formulaSlice";
 
 const EditFavorite = ({ item }: { item: FavoriteItemObj }) => {
   const { resolvedTheme } = useTheme();
@@ -19,43 +19,56 @@ const EditFavorite = ({ item }: { item: FavoriteItemObj }) => {
   const title_ref = useRef<HTMLInputElement>(null);
   const [currentValue, setCurrentValue] = useState(item.formula);
 
-  const deleteFavorite = async (id: string) => {
+  const deleteFavorite = async () => {
     const favorite_list = await formula_bucket.get("favorites");
     if (favorite_list.favorites) {
       const updatedFavorites = favorite_list.favorites.filter(
-        (item: FavoriteItemObj) => item.id !== id
+        (value: FavoriteItemObj) => value.id !== item.id
       );
       formula_bucket.set({ favorites: updatedFavorites });
-      dispatch(removeFormula(id));
+      dispatch(removeFormula(item.id));
     }
   };
 
-  const updateFavorite = () => {
-    const nowDate = new Date();
-    const date =
-      nowDate.getFullYear() +
-      "/" +
-      ("0" + (nowDate.getMonth() + 1)).slice(-2) +
-      "/" +
-      ("0" + nowDate.getDate()).slice(-2) +
-      " " +
-      ("0" + nowDate.getHours()).slice(-2) +
-      ":" +
-      ("0" + nowDate.getMinutes()).slice(-2) +
-      ":" +
-      ("0" + nowDate.getSeconds()).slice(-2) +
-      "." +
-      nowDate.getMilliseconds();
+  const updateFavorite = async () => {
+    const favorite_list = await formula_bucket.get("favorites");
 
-    const newFavorite = {
-      id: item.id,
-      title: title_ref.current?.value,
-      formula: currentValue,
-      createdAt: date,
-    };
+    if (title_ref.current?.value && currentValue != "") {
+      const nowDate = new Date();
+      const date =
+        nowDate.getFullYear() +
+        "/" +
+        ("0" + (nowDate.getMonth() + 1)).slice(-2) +
+        "/" +
+        ("0" + nowDate.getDate()).slice(-2) +
+        " " +
+        ("0" + nowDate.getHours()).slice(-2) +
+        ":" +
+        ("0" + nowDate.getMinutes()).slice(-2) +
+        ":" +
+        ("0" + nowDate.getSeconds()).slice(-2) +
+        "." +
+        nowDate.getMilliseconds();
 
-    // 保存処理を行う
-    console.log(newFavorite);
+      const newFavorite = {
+        id: item.id,
+        title: title_ref.current.value,
+        formula: currentValue,
+        createdAt: date,
+      };
+
+      if (favorite_list.favorites) {
+        const index = favorite_list.favorites.findIndex(
+          (value) => value.id === item.id
+        );
+        if (index !== -1) {
+          favorite_list.favorites[index] = newFavorite;
+          console.log(favorite_list.favorites[index]);
+          formula_bucket.set({ favorites: favorite_list.favorites });
+          dispatch(updateFormula(newFavorite));
+        }
+      }
+    }
   };
 
   return (
@@ -98,15 +111,14 @@ const EditFavorite = ({ item }: { item: FavoriteItemObj }) => {
             className={`w-full h-8 hover:bg-red-500 ${
               resolvedTheme === "light" && " hover:text-secondary"
             }`}
-            onClick={() => deleteFavorite(item.id)}
+            onClick={() => deleteFavorite()}
           >
             {t("削除")}
           </Button>
-          <Button type="submit" className="w-full h-8">
+          <Button type="submit" className="w-full h-8" onClick={updateFavorite}>
             {t("保存")}
           </Button>
         </DialogClose>
-        <button onClick={updateFavorite}>確認ボタン</button>
       </DialogFooter>
     </>
   );
