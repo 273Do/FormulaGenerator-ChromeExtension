@@ -14,29 +14,25 @@ import { useEffect, useState } from "react";
 import { Label } from "./ui/label";
 
 import { useTranslation } from "react-i18next";
-import { bucket } from "@/utils/storage";
+import { setting_bucket } from "@/utils/storage";
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
   const [t, i18n] = useTranslation();
 
   const [position, setPosition] = useState(theme);
-  const [lang, setLang] = useState<string>("en");
 
   useEffect(() => {
     (async () => {
-      const value = await bucket.get();
-      console.log(value);
+      const value = await setting_bucket.get();
       if (value) {
-        setLang(value.lang);
         i18n.changeLanguage(value.lang);
       }
     })();
   }, []);
 
   const saveLang = (lang: string) => {
-    bucket.set({ lang: lang });
-    setLang(lang);
+    setting_bucket.set({ lang: lang });
     i18n.changeLanguage(lang);
   };
 
@@ -84,10 +80,10 @@ export function ModeToggle() {
           </Label>
           <Switch
             id="airplane-mode"
-            checked={lang === "ja"}
-            onCheckedChange={() =>
+            checked={i18n.language === "ja"}
+            onCheckedChange={
+              () => saveLang(i18n.language === "en" ? "ja" : "en")
               // i18n.changeLanguage(i18n.language === "en" ? "ja" : "en")
-              saveLang(lang === "en" ? "ja" : "en")
             }
           />
         </div>

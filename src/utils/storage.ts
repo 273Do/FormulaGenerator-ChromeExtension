@@ -1,9 +1,23 @@
 import { getBucket } from "@extend-chrome/storage";
 
-interface MyBucket {
+interface SettingBucket {
   lang: string;
+  zoom: number;
 }
 
-const bucket = getBucket<MyBucket>("my_bucket", "sync");
+interface FavoriteItemObj {
+  id: string;
+  title: string;
+  formula: string;
+  createdAt: string;
+}
+interface FormulaBucket {
+  formula: string;
+  favorites: FavoriteItemObj[];
+}
 
-export { bucket };
+const setting_bucket = getBucket<SettingBucket>("setting_bucket", "sync");
+const formula_bucket = getBucket<FormulaBucket>("formula_bucket", "sync");
+
+export { setting_bucket, formula_bucket };
+export type { FavoriteItemObj };

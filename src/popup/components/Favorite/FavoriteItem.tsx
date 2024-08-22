@@ -1,26 +1,31 @@
 import React from "react";
 import CopySelector from "../CopySelector";
 import { Separator } from "@/components/ui/separator";
+import { FavoriteItemObj } from "@/utils/storage";
+import { MathJax, MathJaxContext } from "better-react-mathjax";
 
-const FavoriteItem = ({ index }: { index: number }) => {
+const FavoriteItem = ({ data }: { data: FavoriteItemObj }) => {
   return (
     <>
-      {index != 0 && <Separator />}
-      <div
-        className="p-2 flex font-medium items-center justify-between transition hover:opacity-70 hover:bg-accent cursor-pointer"
-        onClick={() => console.log("click")}
-      >
+      {data != undefined && <Separator />}
+      <div className="p-1 flex font-medium items-center justify-between transition hover:opacity-70 hover:bg-accent cursor-pointer">
         <div className="flex items-center gap-2">
-          <div>
-            <p className="font-semibold">test</p>
+          <div className="">
+            <p className="font-semibold overflow-hidden whitespace-nowrap text-ellipsis max-w-[105px]">
+              {data.title}
+            </p>
             <p className="font-inter text-xs text-muted-foreground">
-              yyyy/mm/dd
+              {data.createdAt.split(" ")[0]}
             </p>
           </div>
         </div>
-        <div className="items-center flex gap-2">
-          <div>y=x/2</div>
-          <CopySelector />
+        <div className="h-12 w-[160px] items-center flex gap-2">
+          <MathJaxContext src="../../../mathjax/es5/tex-chtml.js">
+            <MathJax dynamic className="text-xs w-full h-full overflow-scroll">
+              {`$$${data.formula}$$`}
+            </MathJax>
+          </MathJaxContext>
+          <CopySelector className="" />
         </div>
       </div>
     </>
