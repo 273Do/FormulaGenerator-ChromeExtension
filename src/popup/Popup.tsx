@@ -1,4 +1,3 @@
-import { getBucket } from "@extend-chrome/storage";
 import * as Layout from "./layouts/index";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
