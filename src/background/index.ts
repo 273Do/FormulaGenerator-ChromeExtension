@@ -1,15 +1,5 @@
 import browser from "webextension-polyfill";
-import store, { initializeWrappedStore } from "../app/store";
-import { translate } from "../app/translate";
 import { getBucket } from "@extend-chrome/storage";
-
-initializeWrappedStore();
-
-store.subscribe(() => {
-  // access store state
-  // const state = store.getState();
-  // console.log('state', state);
-});
 
 // show welcome page on new install
 browser.runtime.onInstalled.addListener(async (details) => {
@@ -41,17 +31,17 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   if (tab !== undefined) {
-    switch (info.menuItemId) {
-      case "translation": {
-        const selectedText =
-          info.selectionText !== undefined ? info.selectionText : "";
-        const value = await bucket.get();
-        const userTargetLang = value.targetLang ?? "JA";
-        const translatedText = await translate(selectedText, userTargetLang);
-        console.log(translatedText);
-        break;
-      }
-    }
+    //   switch (info.menuItemId) {
+    //     case "translation": {
+    //       const selectedText =
+    //         info.selectionText !== undefined ? info.selectionText : "";
+    //       const value = await bucket.get();
+    //       const userTargetLang = value.targetLang ?? "JA";
+    //       const translatedText = await translate(selectedText, userTargetLang);
+    //       console.log(translatedText);
+    //       break;
+    //     }
+    //   }
   }
 });
 
