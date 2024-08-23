@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { formula_bucket } from "@/utils/storage";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addFormulaList } from "@/redux/formulaSlice";
 
 const CreateFavorite = ({ currentValue }: { currentValue: string }) => {

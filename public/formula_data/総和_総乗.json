@@ -1,0 +1,11 @@
+{
+  "総和": {
+    "総和1": " \\sum ",
+    "総和2": " \\sum_{i=1}^{n}x_i ",
+    "総和3": " \\displaystyle \\sum_{i=1}^\\infty x_i = x_1+x_2+x_3+ \\cdots "
+  },
+  "総乗": {
+    "総乗1": " \\prod ",
+    "総乗2": " \\displaystyle \\prod_{i=1}^n x_i = x_1 \\times x_2 \\times \\cdots \\times x_n "
+  }
+}
