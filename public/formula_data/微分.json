@@ -1,0 +1,39 @@
+{
+  "ラグランジュ記法": {
+    "1階微分": " f^{\\prime}(x) ",
+    "2階微分": " f^{\\prime\\prime}(x) ",
+    "n階微分": " f^{(n)}(x) "
+  },
+  "ライプニッツ記法": {
+    "ライプニッツ記法1": " \\frac{dy}{dx} ",
+    "ライプニッツ記法2": " \\frac{ \\mathrm{d} y}{ \\mathrm{d} x} ",
+    "ライプニッツ記法3": " \\frac{d^n y}{dx^n} ",
+    "ある点における微分係数": " \\left. \\frac{dy}{dx} \\right|_{x=a} "
+  },
+  "ニュートン記法": {
+    "ニュートン記法 例1": " \\dot{y} = \\frac{dy}{dt} = v ",
+    "ニュートン記法 例2": " \\ddot{y} = \\frac{d^2y}{dt^2} =a "
+  },
+  "オイラー記法": {
+    "オイラー記法1": " Df ",
+    "オイラー記法2": " D_x y ",
+    "微分の定義": " f^{\\prime}(x) = \\frac{df}{dx} = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} "
+  },
+  "偏微分": {
+    "∂": " \\partial ",
+    "偏微分 例1": " \\frac{\\partial f}{\\partial x} =f_x ",
+    "偏微分 例2": " \\frac{\\partial}{\\partial y} \\left( \\frac{\\partial f}{\\partial x} \\right) = f_{xy} ",
+    "偏微分 例3": " \\frac{\\partial^n f}{\\partial x^n} "
+  },
+  "ベクトルの微分演算": {
+    "∇": " \\nabla ",
+    "ベクトル微分演算 例1": " \\nabla = \\left( \\frac{\\partial}{\\partial x}, \\frac{\\partial}{\\partial y}, \\frac{\\partial}{\\partial z} \\right) ",
+    "ベクトル微分演算 例2": " \\mathrm{grad} \\phi = \\nabla \\phi ",
+    "ベクトル微分演算 例3": " \\mathrm{div} \\mathbf{A} = \\nabla \\cdot \\mathbf{A} ",
+    "ベクトル微分演算 例4": " \\mathrm{rot} \\mathbf{A} = \\nabla \\times \\mathbf{A} "
+  },
+  "その他のベクトル微分演算": {
+    "ベクトル微分演算 例5": " \\Delta = \\nabla^2 ",
+    "ベクトル微分演算 例6": " \\Delta \\phi = \\nabla \\cdot \\nabla \\phi = \\left( \\frac{\\partial^2}{\\partial x^2} + \\frac{\\partial^2}{\\partial y^2} + \\frac{\\partial^2}{\\partial z^2} \\right) \\phi "
+  }
+}

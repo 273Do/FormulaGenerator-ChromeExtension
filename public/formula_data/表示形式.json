@@ -1,0 +1,12 @@
+{
+  "複数行の数式": {
+    "「\\」で改行": " \\begin{eqnarray} x_1 + 2x_2 & = 1 \\\\ 2x_1 + 3x_2 & = 3 \\end{eqnarray} ",
+    "「&」で任意の位置を揃える": " \\begin{align} x_1 + 2x_2 + x_3 & = 3 \\\\ 2x_1 + 3x_2 + 4x_3 & = 2 \\\\ 3x_1 + 2x_2 + x_3 & = 0 \\end{align} ",
+    "「*」で自動式番号取得を無効": " \\begin{align*} x^2 - (a + b)x + ab & = 0 \\\\ (x - a) (x - b) & = 0 \\\\ x & = a, b \\end{align*} ",
+    "「\\tag{}」で別行立ての数式に式番号を付与": " \\begin{eqnarray} x_1 + 2x_2 & = & 1 \\tag{99} \\\\ 2x_1 + 3x_2 & = & 3 \\tag{100} \\end{eqnarray} "
+  },
+  "場合分け": {
+    "場合分け 例1": " \\begin{cases} x_1 + 2x_2 + x_3 = 3 \\\\ 2x_1 + 3x_2 + 4x_3 = 2 \\\\ 3x_1 + 2x_2 + x_3 = 0 \\end{cases} ",
+    "場合分け 例2": " \\|x|= \\begin{cases} x & ( x \\ge 0 ) \\\\ -x & ( x \\lt 0 ) \\end{cases} "
+  }
+}

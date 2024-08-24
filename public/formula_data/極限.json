@@ -1,0 +1,11 @@
+{
+  "極限": {
+    "極限": " \\lim_{n \\to \\infty} \\frac{1}{n} = 0 "
+  },
+  "上極限・下極限": {
+    "上極限": " \\limsup_{n \\to \\infty} a_n ",
+    "下極限": " \\liminf_{n \\to \\infty} a_n ",
+    "上極限の定義": " \\overline{\\lim}_{n \\to \\infty} a_n = \\lim_{n \\to \\infty} \\left( \\sup_{k \\ge n} a_k \\right) ",
+    "下極限の定義": " \\underline{\\lim}_{n \\to \\infty} a_n = \\lim_{n \\to \\infty} \\left( \\inf_{k \\ge n} a_k \\right) "
+  }
+}

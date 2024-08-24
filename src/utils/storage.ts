@@ -3,6 +3,7 @@ import { getBucket } from "@extend-chrome/storage";
 interface SettingBucket {
   lang: string;
   zoom: number;
+  template: string;
 }
 
 interface FavoriteItemObj {
