@@ -67,13 +67,19 @@ const Generate = () => {
       }
       if (s_value.template) {
         saveTemplateName(s_value.template);
+      } else {
+        saveTemplateName("演算子");
       }
     })();
   }, []);
 
   const handleClick = async (formula_tex: string) => {
     const f_value = await formula_bucket.get();
-    saveFormula(f_value.formula + formula_tex);
+    if (f_value.formula) {
+      saveFormula(f_value.formula + formula_tex);
+    } else {
+      saveFormula(formula_tex);
+    }
   };
 
   return (
