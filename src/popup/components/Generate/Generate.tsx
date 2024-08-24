@@ -108,13 +108,12 @@ const Generate = () => {
             defaultValue={currentValue}
             value={currentValue}
           />
-          <CopySelector className="mx-2" />
+          <CopySelector tex={currentValue} className="mx-2" />
         </div>
 
         <div>
           <p className="mt-4 text-lg">{t("テンプレート")}</p>
           <div className="bg-muted w-full rounded-md px-2 py-1">
-            {/* <TemplateSelector /> */}
             <div className="w-full h-5 flex justify-between items-center">
               <p className="text-cyan-600 text-xs tracking-wide">
                 {t(templateName)}

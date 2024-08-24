@@ -63,7 +63,6 @@ const EditFavorite = ({ item }: { item: FavoriteItemObj }) => {
         );
         if (index !== -1) {
           favorite_list.favorites[index] = newFavorite;
-          console.log(favorite_list.favorites[index]);
           formula_bucket.set({ favorites: favorite_list.favorites });
           dispatch(updateFormula(newFavorite));
         }
@@ -101,7 +100,7 @@ const EditFavorite = ({ item }: { item: FavoriteItemObj }) => {
           defaultValue={currentValue}
           onChange={(e) => setCurrentValue(e.target.value)}
         />
-        <CopySelector className="mx-2" />
+        <CopySelector tex={item.formula} className="mx-2" />
       </div>
       <DialogFooter>
         <DialogClose className="mt-2 flex flex-row gap-2 items-center">

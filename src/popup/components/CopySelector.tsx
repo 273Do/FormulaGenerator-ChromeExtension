@@ -7,8 +7,22 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useTranslation } from "react-i18next";
 
-const CopySelector = ({ className }: { className?: string }) => {
+const CopySelector = ({
+  tex,
+  className,
+}: {
+  tex: string;
+  className?: string;
+}) => {
   const { t } = useTranslation();
+
+  const texCopy = async () => {
+    console.log(tex);
+  };
+
+  const wordCopy = async () => {
+    console.log(tex);
+  };
 
   return (
     <DropdownMenu>
@@ -18,10 +32,10 @@ const CopySelector = ({ className }: { className?: string }) => {
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="overflow-y-scroll font-inter border border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <DropdownMenuItem className="cursor-pointer">
+        <DropdownMenuItem className="cursor-pointer" onClick={texCopy}>
           {t("Texをコピー")}
         </DropdownMenuItem>
-        <DropdownMenuItem className="cursor-pointer">
+        <DropdownMenuItem className="cursor-pointer" onClick={wordCopy}>
           {t("Wordへコピー")}
         </DropdownMenuItem>
       </DropdownMenuContent>

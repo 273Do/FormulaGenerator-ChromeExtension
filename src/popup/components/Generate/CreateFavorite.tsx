@@ -62,14 +62,6 @@ const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
     }
   };
 
-  const test = async () => {
-    const favorite_list = await formula_bucket.get("favorites");
-    // console.log(favorite_list.favorites);
-    // formula_bucket.remove("favorites");
-    // console.log(formula_list);
-    console.log(favorite_list.favorites);
-  };
-
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -89,14 +81,8 @@ const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
           <DialogDescription></DialogDescription>
         </DialogHeader>
         <div className=" overflow-scroll h-24 text-2xl font-inter font-semibold w-full text-center">
-          {/* y=x/2 */}
           <MathJaxContext src="../../../mathjax/es5/tex-chtml.js">
-            <MathJax
-              dynamic
-              // className={`${zoomSetting} w-full h-full overflow-scroll`}
-              className={`text-base w-full pointer-events-none`}
-              // onClick={() => saveZoom()}
-            >
+            <MathJax dynamic className={`text-base w-full pointer-events-none`}>
               {`$$${currentValue}$$`}
             </MathJax>
           </MathJaxContext>
@@ -112,7 +98,6 @@ const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
               {t("追加")}
             </Button>
           </DialogClose>
-          <button onClick={test}>確認</button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
