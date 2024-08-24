@@ -1,5 +1,5 @@
 import browser from "webextension-polyfill";
-import { getBucket } from "@extend-chrome/storage";
+// import { getBucket } from "@extend-chrome/storage";
 
 // show welcome page on new install
 browser.runtime.onInstalled.addListener(async (details) => {
@@ -10,9 +10,9 @@ browser.runtime.onInstalled.addListener(async (details) => {
   }
 });
 
-interface MyBucket {
-  targetLang: string;
-}
+// interface MyBucket {
+//   targetLang: string;
+// }
 
 // chrome.runtime.onInstalled.addListener(() => {
 //   chrome.contextMenus.create({
