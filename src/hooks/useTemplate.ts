@@ -1,5 +1,5 @@
 import { setting_bucket } from "@/utils/storage";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const useTemplate = () => {
   const [templateName, setTemplateName] = useState<string>("順序_組合わせ");

@@ -76,12 +76,12 @@ const Generate = () => {
           <p className="mt-4 text-lg">{t("テンプレート")}</p>
           <div className="bg-muted w-full rounded-md px-2 py-1">
             <TemplateSelector />
-            <Separator
+            {/* <Separator
               className={`${resolvedTheme == "dark" && "bg-zinc-700"} my-1`}
             />
             <div className="bg-muted w-full max-h-52 overflow-scroll">
               <div className="h-32"></div>
-            </div>
+            </div> */}
           </div>
           <div className="h-[70px]"></div>
         </div>
