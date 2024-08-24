@@ -1,147 +1,50 @@
-<!-- <div align="center">
-  <br>
- <img src="https://raw.githubusercontent.com/sinanbekar/browser-extension-react-typescript-starter/main/public/images/extension_128.png" alt="Browser Extension React & TypeScript Starter" width="128">
-  <br>
-  <h2>
-    Browser Extension <br>
-    React & TypeScript Starter
-    <br>
-  </h2>
-</div>
-
-<p align="center">A cross-platform (Chrome, Firefox, Edge, Opera, Brave) web browser extension (Manifest V3 and Manifest V2) starter kit with hot reload support, built with React, Typescript, Redux, Vite, ESLint, Prettier, TailwindCSS, Jest and more! </p>
-<hr />
-
-<div align="center" >
-  <a href="https://github.com/sinanbekar/browser-extension-react-typescript-starter/actions">
-    <img src="https://github.com/sinanbekar/browser-extension-react-typescript-starter/actions/workflows/ci.yml/badge.svg" alt="CI">
-  </a>
-    &nbsp;
-  <a>
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome">
-  </a>
-    &nbsp;
-  <a href="https://github.com/sinanbekar/browser-extension-react-typescript-starter/blob/main/LICENSE">
-    <img src="https://img.shields.io/apm/l/atomic-design-ui.svg" alt="MIT License">
-  </a>
-
-</div>
-
 <p align="center">
-  <a href="#features">Features</a> ·
-  <a href="#quick-start">Quick Start</a> ·
-  <a href="#important-notes">Important Notes</a> ·
-  <a href="#license">License</a>
+<img width="120" src="https://github.com/user-attachments/assets/69f3a5c7-b780-4812-855f-caa826f6c7f2">
 </p>
 
-> 🚀 **NEW** (experimental) Zustand for state management instead Redux, with [`webext-zustand`](https://github.com/sinanbekar/webext-zustand) package. You can try it now on the branch [`experimental-zustand`](https://github.com/sinanbekar/browser-extension-react-typescript-starter/tree/experimental-zustand)
+# FormulaGenerator-ChromeExtension
 
-## Features
+数式生成ツールのChrome拡張機能版です．GUIでTexを用いた数式を生成することができます．
 
-- **Instant HMR** (hot reload)[^1]
-- Write once run on any browser
-- Global Redux support with persist option. Effortless communication between content, background, popup, options, and more pages.
-- Provides a basic content example and popup, options, and welcome pages with all React
-- Latest Manifest V3 support
-- Manifest V2 support (beta)
-- Dynamic manifest.json
-- Includes ESLint configured to work with TypeScript and Prettier
-- Includes tests with Jest
+## 🧩 開発環境・使用技術・ツール
 
-#### Built with
+<H3>開発期間：3週間</H3>
 
-- React
-- TypeScript
-- Redux (toolkit and redux-persist)
-- TailwindCSS
-- Vite
-- Jest
-- ESLint
-- Prettier
-- simple-git-hooks (lightweight husky alternative)
-- nano-staged
+<H3>技術スタック</H3>
+<a href="https://skillicons.dev">
+   <img src="https://skillicons.dev/icons?i=typescript,react,redux,tailwindcss,latex"/>
+</a> <p>Radix-UI / shadcn/ui / MathJax / i18next</p>
+<h3>UI・ロゴ</H3>
+<a href="https://skillicons.dev">
+   <img src="https://skillicons.dev/icons?i=blender,figma,photoshop"/>
+</a>
 
-[^1]: While it is fully supported and stable in most cases, hard reloading is rarely recommended.
+## 🧩 導入方法
 
-## Browser Support
+こちらのChromeウェブストアからインストールすることができます．
 
-| [![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png)](/) | [![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png)](/) | [![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png)](/) | [![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png)](/) | [![Brave](https://raw.github.com/alrra/browser-logos/master/src/brave/brave_48x48.png)](/) |
-| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| ✔                                                                                             | ✔ (Beta)                                                                                         | ✔                                                                                       | ✔                                                                                          | ✔                                                                                          |
+## 🧩 アプリ機能
 
-## Quick Start
+### 1. 数式生成機能
 
-Ensure you have
+テキストエリアにTexを入力すると数式が表示されます．また，あらかじめ用意されたテンプレートを使用することも可能です．
 
-- [Node.js](https://nodejs.org) 16 or later installed
-- [Yarn](https://yarnpkg.com) installed
+### 2. 数式コピー機能
 
-### Use the Template
+生成した数式をクリップボードにコピーすることができます．  Texをそのままテキスト形式でコピーするか，Wordなどに対応したMathML形式でコピーするか選択することができます．
 
-#### GitHub Template
+### 3. お気に入り/編集機能
 
-[Create a repo from this template on GitHub](https://github.com/sinanbekar/browser-extension-react-typescript-starter/generate).
+残しておきたい数式があればお気に入りに追加して保存しておくことができます．  
+お気に入りに登録した数式は再度編集したり削除したりすることが可能です．  
+これらはchromeにログインしているアカウント間で同期ができます．
 
-**_or_**
+### 4. テーマ/言語切り替え機能
 
-#### Clone to local
+テーマは，ダークテーマ，ライトテーマ，システム設定から選択することができます．  
+言語は英語と日本語に対応しています．  
+デフォルトではダークテーマ，英語になっています．一度設定すると保存されますので都度切り替える必要はありません．
 
-If you prefer to do it manually with the cleaner git history
+## 🧩 免責事項
 
-> **Note** If you don't have yarn installed, run: npm install -g yarn
-
-```bash
-npx degit sinanbekar/browser-extension-react-typescript-starter my-web-extension
-cd my-web-extension
-git init
-```
-
-Then run the following:
-
-- `yarn install` to install dependencies.
-- `yarn dev` to start the development server.
-- `yarn build` to build an unpacked extension.
-
-- **Load extension in Chrome (Chromium, Manifest V3)**
-
-  - Go to the browser address bar and type `chrome://extensions`
-  - Check the `Developer Mode` button to enable it.
-  - Click on the `Load Unpacked Extension` button.
-  - Select your `dist` folder in the project root.
-
-- **Load extension in Firefox (Manifest V2)**
-
-  - Go to the browser address bar and type `about://debugger`
-  - Click on the `Load Temporary Add-on` button.
-  - Select your `dist-firefox-v2` folder in the project root.
-
-### Available Commands
-
-- `yarn clean` to remove dist folder. `dev` and `build` commands call this command.
-- `yarn format` to fix code with eslint and prettier.
-- `yarn lint` to call ESLint and Prettier.
-- `yarn test` for testing.
-
-### Redux
-
-You can use redux (redux-toolkit) as state manager between popup, background, content and custom pages. Read the documentation for more.
-
-#### [@eduardoac-skimlinks/webext-redux](https://github.com/eduardoacskimlinks/webext-redux)
-
-### Bundling
-
-#### [@crxjs/vite-plugin](https://github.com/crxjs/chrome-extension-tools)
-
-> **Note** This plugin powers the development side of this starter.
->
-> docs: https://crxjs.dev/vite-plugin
->
-> Special thanks to [@jacksteamdev](https://github.com/jacksteamdev) and contributors for this amazing plugin.
-
-## Contributing
-
-This repository is following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) standard.
-
-## License
-
-MIT © [Sinan Bekar](https://sinan.engineer) -->
+この作成物および同梱物を使用したことによって生じたすべての障害・損害・不具合等に関しては，私と私の関係者および私の所属するいかなる団体・組織とも，一切の責任を負いません．各自の責任においてご使用ください．

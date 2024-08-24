@@ -1,5 +1,5 @@
 import browser from "webextension-polyfill";
-import { getBucket } from "@extend-chrome/storage";
+// import { getBucket } from "@extend-chrome/storage";
 
 // show welcome page on new install
 browser.runtime.onInstalled.addListener(async (details) => {
@@ -10,24 +10,22 @@ browser.runtime.onInstalled.addListener(async (details) => {
   }
 });
 
-interface MyBucket {
-  targetLang: string;
-}
+// interface MyBucket {
+//   targetLang: string;
+// }
 
-const bucket = getBucket<MyBucket>("my_bucket", "sync");
-
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.contextMenus.create({
-    id: "Favorites",
-    title: "お気に入りを確認",
-    contexts: ["all"],
-  });
-  chrome.contextMenus.create({
-    id: "translation",
-    title: "選択したテキストをお気に入りに追加",
-    contexts: ["selection"],
-  });
-});
+// chrome.runtime.onInstalled.addListener(() => {
+//   chrome.contextMenus.create({
+//     id: "Favorites",
+//     title: "お気に入りを確認",
+//     contexts: ["all"],
+//   });
+//   chrome.contextMenus.create({
+//     id: "translation",
+//     title: "選択したテキストをお気に入りに追加",
+//     contexts: ["selection"],
+//   });
+// });
 
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   if (tab !== undefined) {
