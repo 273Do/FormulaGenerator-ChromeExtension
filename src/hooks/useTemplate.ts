@@ -2,7 +2,7 @@ import { setting_bucket } from "@/utils/storage";
 import React, { useState } from "react";
 
 const useTemplate = () => {
-  const [templateName, setTemplateName] = useState<string>("順序_組合わせ");
+  const [templateName, setTemplateName] = useState<string>("演算子");
   const [data, setData] = useState([]);
 
   const saveTemplateName = async (template: string) => {

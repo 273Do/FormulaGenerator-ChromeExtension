@@ -8,10 +8,10 @@ const FavoriteItem = ({ data }: { data: FavoriteItemObj }) => {
   return (
     <>
       {data != undefined && <Separator />}
-      <div className="p-1 flex font-medium items-center justify-between transition hover:opacity-70 hover:bg-accent cursor-pointer">
+      <div className="p-1  gap-2 flex font-medium items-center justify-between transition hover:opacity-70 hover:bg-accent cursor-pointer">
         <div className="flex items-center gap-2">
           <div className="">
-            <p className="font-semibold overflow-hidden whitespace-nowrap text-ellipsis max-w-[105px]">
+            <p className="font-semibold overflow-hidden whitespace-nowrap text-ellipsis max-w-[70px]">
               {data.title}
             </p>
             <p className="font-inter text-xs text-muted-foreground">
@@ -19,13 +19,12 @@ const FavoriteItem = ({ data }: { data: FavoriteItemObj }) => {
             </p>
           </div>
         </div>
-        <div className="h-12 w-[160px] items-center flex gap-2">
+        <div className="h-12 w-[170px] items-center flex">
           <MathJaxContext src="../../../mathjax/es5/tex-chtml.js">
             <MathJax dynamic className="text-xs w-full h-full overflow-scroll">
               {`$$${data.formula}$$`}
             </MathJax>
           </MathJaxContext>
-          <CopySelector className="" />
         </div>
       </div>
     </>
