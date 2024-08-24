@@ -4,8 +4,8 @@ import React, { useState } from "react";
 const useSaveFormula = () => {
   const [currentValue, setCurrentValue] = useState<string>("");
 
-  const saveFormula = (ref: React.RefObject<HTMLInputElement>) => {
-    const current_formula = ref.current?.value;
+  const saveFormula = (tex: string) => {
+    const current_formula = tex;
     formula_bucket.set({ formula: current_formula });
     setCurrentValue(current_formula as string);
   };

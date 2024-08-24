@@ -1,13 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { set } from "lodash-es";
-
-// interface FormulaState {
-//   formula_list: FavoriteItemObj[];
-// }
-
-// const initialState: FormulaState = {
-//   formula_list: [],
-// };
 
 export const formulaSlice = createSlice({
   name: "formula",

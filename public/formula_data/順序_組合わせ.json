@@ -2,7 +2,7 @@
   "順列": {
     "順列": " {}_n P_k ",
     "順列(ローマン体)": " {}_n \\mathrm{P}_k ",
-    "順列の計算": " displaystyle {}_n P_k = n \\times (n-1) \\times cdots \\times (n-k+1) = \\frac{n!}{(n-k)!} "
+    "順列の計算": " \\displaystyle {}_n P_k = n \\times (n-1) \\times \\cdots \\times (n-k+1) = \\frac{n!}{(n-k)!} "
   },
   "重複順列": {
     "重複順列": " {}_n \\Pi_k ",
