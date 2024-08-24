@@ -13,8 +13,8 @@
   "テンプレート": "Template",
   "Texを入力": "Enter Tex",
 
-  "Texをコピー": "Tex Copy",
-  "Wordへコピー": "Word Copy",
+  "テキスト形式でコピー": "Copy as text",
+  "MathML形式でコピー(Wordなど)": "Copy as MathML (Word, etc.)",
 
   "お気に入り追加": "Add to Favorites",
   "追加": "Add",

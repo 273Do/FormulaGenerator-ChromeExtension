@@ -17,11 +17,12 @@ const CopySelector = ({
   const { t } = useTranslation();
 
   const texCopy = async () => {
-    console.log(tex);
+    navigator.clipboard.writeText(tex);
   };
 
   const wordCopy = async () => {
-    console.log(tex);
+    const mathmlOutput = await (window as any).MathJax.tex2mmlPromise(tex);
+    navigator.clipboard.writeText(mathmlOutput);
   };
 
   return (
@@ -33,10 +34,10 @@ const CopySelector = ({
       </DropdownMenuTrigger>
       <DropdownMenuContent className="overflow-y-scroll font-inter border border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <DropdownMenuItem className="cursor-pointer" onClick={texCopy}>
-          {t("Texをコピー")}
+          {t("テキスト形式でコピー")}
         </DropdownMenuItem>
         <DropdownMenuItem className="cursor-pointer" onClick={wordCopy}>
-          {t("Wordへコピー")}
+          {t("MathML形式でコピー(Wordなど)")}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
