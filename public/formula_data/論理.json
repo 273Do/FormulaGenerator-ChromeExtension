@@ -1,0 +1,26 @@
+{
+  "論理記号": {
+    "命題：合意1": " \\to ",
+    "命題：合意1(逆)": " \\gets ",
+    "命題：合意2": " \\Rightarrow ",
+    "命題：合意2(逆)": " \\Leftarrow ",
+    "命題：同値1": " \\leftrightarrow ",
+    "命題：同値2": " \\Leftrightarrow ",
+    "命題：同値3": " \\iff ",
+    "命題：同値4": " \\equiv ",
+    "命題：否定": " \\lnot ",
+    "論理積": " \\land ",
+    "論理和": " \\lor ",
+    "排他的論理和1": " \\oplus ",
+    "排他的論理和2": " \\underline{\\lor} ",
+    "トートロジー(真)": " \\top ",
+    "矛盾(偽)": " \\bot ",
+    "全称量化(すべての)": " \\forall ",
+    "存在量化(ある)": " \\exists ",
+    "存在しない": " \\not\\exists "
+  },
+  "サンプル": {
+    "収束例": " \\displaystyle \\lim_{x\\to a}f(x)=b ",
+    "ε-δ論法": " \\begin{align} {}^\\forall \\varepsilon \\gt 0, {}^\\exists \\delta \\gt 0 ~~ \\mathrm{s.t.} \\\\ {}^\\forall x \\in \\mathbb{R}, 0 \\gt |x-a| \\gt \\delta \\Rightarrow |f(x)-b| \\gt \\varepsilon \\end{align} "
+  }
+}

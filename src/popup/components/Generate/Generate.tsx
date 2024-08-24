@@ -27,7 +27,7 @@ const template_list = [
   "集合",
   "順序_組合わせ",
   "総和_総乗",
-  "根号_指数_対数",
+  "累乗_指数_対数",
   "複素数",
   "三角関数",
   "極限",
@@ -35,11 +35,11 @@ const template_list = [
   "積分",
   "ベクトル",
   "行列",
-  "空白",
+  "スペース",
   "表示形式",
   "フォント_サイズ",
-  "ギリシャ文字（大文字）",
-  "ギリシャ文字（小文字）",
+  "ギリシャ文字(大文字)",
+  "ギリシャ文字(小文字)",
   "特殊文字",
   "アクセント",
 ];
@@ -117,7 +117,7 @@ const Generate = () => {
             {/* <TemplateSelector /> */}
             <div className="w-full h-5 flex justify-between items-center">
               <p className="text-cyan-600 text-xs tracking-wide">
-                {templateName}
+                {t(templateName)}
               </p>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -130,7 +130,7 @@ const Generate = () => {
                       onClick={() => saveTemplateName(template)}
                       key={template}
                     >
-                      {template}
+                      {t(template)}
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
@@ -143,7 +143,7 @@ const Generate = () => {
               <div className="h-64">
                 {Object.keys(data).map((key) => (
                   <div key={key} className="mr-2">
-                    <p className="mt-2 mb-1">{key}</p>
+                    <p className="mt-2 mb-1">{t(key)}</p>
                     <div className="gap-2 flex flex-col">
                       {Object.keys(data[key]).map((subKey) => (
                         <MathJaxContext
@@ -157,7 +157,7 @@ const Generate = () => {
                           >
                             {`$$${data[key][subKey]}$$`}
                             <p className="text-center text-muted-foreground">
-                              {subKey}
+                              {t(subKey)}
                             </p>
                           </MathJax>
                         </MathJaxContext>

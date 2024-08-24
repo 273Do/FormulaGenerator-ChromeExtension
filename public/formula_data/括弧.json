@@ -1,0 +1,20 @@
+{
+  "括弧": {
+    "(x)": " (x) ",
+    "[x]": " [x] ",
+    "{a}": " \\{ a \\} ",
+    "<x>": " \\langle x \\rangle ",
+    "下付き括弧": " \\lfloor x \\rfloor ",
+    "上付き括弧": " \\lceil x \\rceil ",
+    "|x|": " \\left| x \\right| ",
+    "||x||": " \\|x\\| ",
+    "括弧小": " (\\frac{1}{2}) ",
+    "括弧大": " \\left( \\frac{1}{2} \\right) "
+  },
+  "上括弧・下括弧": {
+    "上括弧": " \\overbrace{a + b + c} ",
+    "下括弧": " \\underbrace{a + b + c} ",
+    "説明付き上括弧": " \\overbrace{a_1 + a_2 + \\cdots + a_n}^{n個} ",
+    "説明付き下括弧": " \\underbrace{a_1 + a_2 + \\cdots + a_n}_{n個} "
+  }
+}

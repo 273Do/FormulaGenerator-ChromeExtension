@@ -1,0 +1,48 @@
+{
+  "三角関数": {
+    "正弦": " \\sin x ",
+    "余弦": " \\cos x ",
+    "正接": " \\tan x ",
+    "余割": " \\csc x ",
+    "正割": " \\sec x ",
+    "余接": " \\cot x "
+  },
+  "三角関数の定義式": {
+    "余割の定義式": " \\csc \\theta = \\frac{1}{\\sin \\theta} ",
+    "正割の定義式": " \\sec \\theta = \\frac{1}{\\cos \\theta} ",
+    "余接の定義式": " \\cot \\theta = \\frac{1}{\\tan \\theta} = \\frac{\\cos \\theta}{\\sin \\theta} "
+  },
+  "三角関数公式": {
+    "三角関数公式1": " \\sin^2 \\theta + \\cos^2 \\theta =1 ",
+    "三角関数公式2": " \\sin (\\alpha \\pm \\beta) = \\sin \\alpha \\cos \\beta \\pm \\cos \\alpha \\sin \\beta ",
+    "三角関数公式3": " \\displaystyle \\tan (x \\pm y) =\\frac{\\tan x \\pm \\tan y}{1 \\mp \\tan x \\tan y} "
+  },
+  "逆三角関数": {
+    "逆正弦1": " \\arcsin x ",
+    "逆余弦1": " \\arccos x ",
+    "逆正接1": " \\arctan x ",
+    "逆正弦2": " \\mathrm{Arcsin} x ",
+    "逆余弦2": " \\mathrm{Arcsin} x ",
+    "逆正接2": " \\mathrm{Arcsin} x ",
+    "逆正弦3": " \\arcsin \\theta = \\sin^{-1} \\theta ",
+    "逆余弦3": " \\arccos \\theta = \\cos^{-1} \\theta ",
+    "逆正接3": " \\arctan \\theta = \\tan^{-1} \\theta "
+  },
+  "双曲線関数": {
+    "双曲線正弦": " \\sinh x ",
+    "双曲線余弦": " \\cosh x ",
+    "双曲線正接": " \\tanh x ",
+    "双曲線余接": " \\coth x "
+  },
+  "双曲線関数の定義式": {
+    "双曲線正弦の定義式": " \\displaystyle \\sinh x = \\frac{e^x - e^{-x}}{2} ",
+    "双曲線余弦の定義式": " \\displaystyle \\cosh x = \\frac{e^x + e^{-x}}{2} ",
+    "双曲線正接の定義式": " \\displaystyle \\tanh = \\frac{\\sinh x}{\\cosh x} ",
+    "双曲線余接の定義式": " \\displaystyle \\coth = \\frac{1}{\\tanh x} "
+  },
+  "逆双曲線関数": {
+    "逆双曲線正弦": " \\sinh^{-1} x = \\ln \\left( x + \\sqrt{x^2 + 1} \\right) ",
+    "逆双曲線余弦": " \\cosh^{-1} x = \\ln \\left( x \\pm \\sqrt{x^2 - 1} \\right) ",
+    "逆双曲線正接": " \\displaystyle \\tanh = \\frac{1}{2} \\ln \\left( \\frac{1 + x}{1 - x} \\right) "
+  }
+}
