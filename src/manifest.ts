@@ -14,21 +14,21 @@ const manifest = defineManifest(async (env) => ({
   background: {
     service_worker: "background/index.ts",
   },
-  host_permissions: ["<all_urls>"],
+  // host_permissions: ["<all_urls>"],
   // options_ui: {
   //   page: "options/options.html",
   //   open_in_tab: false,
   // },
-  web_accessible_resources: [
-    {
-      resources: [
-        // this file is web accessible; it supports HMR b/c it's declared in `rollupOptions.input`
-        "welcome/welcome.html",
-      ],
-      // matches: ["<all_urls>"],
-      matches: ["<all_urls>"],
-    },
-  ],
+  // web_accessible_resources: [
+  //   {
+  //     resources: [
+  //       // this file is web accessible; it supports HMR b/c it's declared in `rollupOptions.input`
+  //       "welcome/welcome.html",
+  //     ],
+  //     // matches: ["<all_urls>"],
+  //     matches: ["<all_urls>"],
+  //   },
+  // ],
   action: {
     default_popup: "popup/popup.html",
     default_icon: {
@@ -44,7 +44,7 @@ const manifest = defineManifest(async (env) => ({
     "48": "images/FormulaGenerator_48.png",
     "128": "images/FormulaGenerator_128.png",
   },
-  permissions: ["storage", "tabs", "contextMenus"],
+  permissions: ["storage"],
   // content_security_policy: {
   //   extension_pages:
   //     "script-src 'self' https://cdnjs.cloudflare.com; object-src 'self'",
