@@ -12,7 +12,7 @@
 
 <H3>技術スタック</H3>
 <a href="https://skillicons.dev">
-   <img src="https://skillicons.dev/icons?i=typescript,react,redux,tailwindcss，latex"/>
+   <img src="https://skillicons.dev/icons?i=typescript,react,redux,tailwindcss,latex"/>
 </a> <p>Radix-UI / shadcn/ui / MathJax / i18next</p>
 <h3>UI・ロゴ</H3>
 <a href="https://skillicons.dev">
