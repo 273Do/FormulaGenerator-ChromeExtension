@@ -6,6 +6,12 @@
 
 数式生成ツールの Chrome 拡張機能版です．GUI で Tex を用いた数式を生成することができます．
 
+<details>
+<summary>スクリーンショット</summary>
+   
+<image width="450px" src="https://github.com/user-attachments/assets/908f139f-dc05-4b8e-a024-9be333b14f4c"/><image width="450px" src="https://github.com/user-attachments/assets/68ffec1d-62ba-4307-97f2-9f277d19832f"/><image width="450px" src="https://github.com/user-attachments/assets/f7f5b00e-9f92-4744-8dcc-a1d78c40e0d9"/><image width="450px" src="https://github.com/user-attachments/assets/6d9b3738-5de3-4766-98ec-e2beb4c00057"/><image width="450px" src="https://github.com/user-attachments/assets/3aa0386c-b5b3-4e4d-bc99-859fecc71f08"/>
+</details>
+
 ## 🧩 開発環境・使用技術・ツール
 
 <H3>開発期間：3週間</H3>
