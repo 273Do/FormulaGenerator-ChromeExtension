@@ -2,7 +2,7 @@ node_modules
 
 dist
 
-dist-firefox-v2*
+# dist-firefox-v2*
 
 .env
 

@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Formula Generator",
+  "description": "This is a Chrome extension version of the mathematical formula generation tool.",
+  "version": "0.1.1",
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "images/FormulaGenerator_16.png",
+      "32": "images/FormulaGenerator_32.png",
+      "48": "images/FormulaGenerator_48.png",
+      "128": "images/FormulaGenerator_128.png"
+    }
+  },
+  "icons": {
+    "16": "images/FormulaGenerator_16.png",
+    "32": "images/FormulaGenerator_32.png",
+    "48": "images/FormulaGenerator_48.png",
+    "128": "images/FormulaGenerator_128.png"
+  },
+  "permissions": [
+    "storage"
+  ]
+}

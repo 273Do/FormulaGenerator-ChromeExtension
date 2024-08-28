@@ -1,0 +1,22 @@
+{
+  "順列": {
+    "順列": " {}_n P_k ",
+    "順列(ローマン体)": " {}_n \\mathrm{P}_k ",
+    "順列の計算": " \\displaystyle {}_n P_k = n \\times (n-1) \\times \\cdots \\times (n-k+1) = \\frac{n!}{(n-k)!} "
+  },
+  "重複順列": {
+    "重複順列": " {}_n \\Pi_k ",
+    "重複順列の計算": " {}_n \\Pi_k = \\underbrace{n \\times n \\times \\cdots \\times n}_{k} = n^k "
+  },
+  "組み合わせ": {
+    "組み合わせ": " {}_n C_k ",
+    "組み合わせ(ローマン体)": " {}_n \\mathrm{C}_k ",
+    "二項係数": " { n \\choose k } ",
+    "組み合わせの計算": " \\displaystyle {}_n C_k = { n \\choose k } = \\frac{n!}{k! (n-k)!} = \\frac{{}_n P_k}{k!} "
+  },
+  "重複組み合わせ": {
+    "重複組み合わせ": " {}_n H_k ",
+    "組み合わせ(ローマン体)": " {}_n \\mathrm{H}_k ",
+    "重複組み合わせの計算": " \\displaystyle {}_n H_k = {}_{n+k-1} C_k = \\frac{(n+k-1)!}{k! (n-1)!} "
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "矢印表記": {
+    "矢印表記1": " \\vec{a} ",
+    "矢印表記2": " \\overrightarrow{AB} "
+  },
+  "太字表記": {
+    "太字表記1": " \\boldsymbol{a} ",
+    "太字表記 例": " \\boldsymbol{A} ",
+    "太字表記 単位ベクトル1": " \\boldsymbol{\\mathrm{e}} ",
+    "太字表記 単位ベクトル2": " \\mathbf{e} "
+  },
+  "行ベクトル・列ベクトル": {
+    "行ベクトル": " ( a_1, a_2, \\cdots , a_n ) ",
+    "列ベクトル": " \\left(\\begin{array}{c} a_1 \\\\a_2 \\\\ \\vdots \\\\ a_n\\end{array}\\right) "
+  },
+  "ノルム": {
+    "ノルム 例1": " |\\vec{a}| ",
+    "ノルム 例2": " \\| \\boldsymbol{A} \\| ",
+    "ノルム 例3": " a = \\| \\boldsymbol{a} \\| = \\sqrt{a_1^2 + a_2^2 + \\cdots +a_n^2} "
+  },
+  "内積(スカラー積)・外積(ベクトル積)": {
+    "内積": " \\boldsymbol{a} \\cdot \\boldsymbol{b} ",
+    "外積": " \\boldsymbol{a} \\times \\boldsymbol{b} ",
+    "内積の定義": " ( \\boldsymbol{a} , \\boldsymbol{b} ) = \\boldsymbol{a} \\cdot \\boldsymbol{b} = \\sum_{i=1}^n a_i b_i ",
+    "外積の定義": " [ \\boldsymbol{a} , \\boldsymbol{b} ] = \\boldsymbol{a} \\times \\boldsymbol{b} = \\sum_{j,k} \\varepsilon_{ijk} a_j b_k "
+  },
+  "転置": {
+    "転置1": " {}^t \\boldsymbol{A} ",
+    "転置2": " \\boldsymbol{A}^{ \\mathrm{T} } ",
+    "n次元列ベクトルの転置": " \\boldsymbol{a} = ( a_1, a_2, \\cdots , a_n )^{ \\mathrm{T} } = \\left( \\begin{array}{c} a_1 \\\\ a_2 \\\\ \\vdots \\\\ a_n \\end{array}\\right) "
+  }
+}

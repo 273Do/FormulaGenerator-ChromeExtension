@@ -92,7 +92,7 @@ const Generate = () => {
           <CreateFavorite currentValue={currentValue} />
         </div>
         <div className="flex flex-col items-end justify-end w-full h-24">
-          <MathJaxContext src="/mathjax/es5/tex-chtml.js">
+          <MathJaxContext src="/mathJax/es5/tex-chtml.js">
             <MathJax
               dynamic
               className={`${zoomSetting} w-full h-full overflow-scroll`}
@@ -152,7 +152,7 @@ const Generate = () => {
                     <div className="gap-2 flex flex-col">
                       {Object.keys(data[key]).map((subKey) => (
                         <MathJaxContext
-                          src="/mathjax/es5/tex-chtml.js"
+                          src="/mathJax/es5/tex-chtml.js"
                           key={subKey}
                         >
                           <MathJax

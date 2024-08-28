@@ -19,9 +19,31 @@
    <img src="https://skillicons.dev/icons?i=blender,figma,photoshop"/>
 </a>
 
-## 🧩 導入方法
+## 🧩 導入方法(How to get started)
 
-[こちら](https://chromewebstore.google.com/detail/formula-generator/ffmemdmnemaeaapabjgccdmbijhneijj?authuser=0&hl=ja)の Chrome ウェブストアからインストールすることができます．
+~~[こちら]()の Chrome ウェブストアからインストールすることができます．~~
+
+<details>
+<summary>日本語</summary>
+
+MathJax の内部に CDN が使われているため，Chrome ウェブストアで公開することができませんでした．ローカルで使用する方法を載せています．
+
+1. Releases からソースコード(zip)を任意の場所にダウンロードしてください．
+2. `dist-firefox-v2`フォルダを任意の場所に配置してください．
+3. Chrome の拡張機能の設定から「デベロッパーモード」を ON にしてください．
+4. 「パッケージ化されてない拡張機能を読み込む」をクリックし，`dist-firefox-v2`フォルダを読み込ませてください．
+</details>
+
+<details>
+<summary>English</summary>
+
+Because MathJax uses a CDN internally, it was not possible to publish it on the Chrome Web Store. Here is how to use it locally.
+
+1. Download the source code (zip) from Releases to a location of your choice.
+2. Place the `dist-firefox-v2` folder in a location of your choice.
+3. Turn on "Developer mode" in the Chrome extension settings.
+4. Click "Load unpackaged extension" and load the `dist-firefox-v2` folder.
+</details>
 
 ## 🧩 アプリ機能
 
