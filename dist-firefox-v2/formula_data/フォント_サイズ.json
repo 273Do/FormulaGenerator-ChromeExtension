@@ -1,0 +1,30 @@
+{
+  "書体": {
+    "ローマン体": " \\rm ABC　abc　あいう ",
+    "ボールド体": " \\bf ABC　abc　あいう ",
+    "イタリック体": " \\it ABC　abc　あいう ",
+    "サンセリフ体": " \\sf ABC　abc　あいう ",
+    "タイプライタ体": " \\tt ABC　abc　あいう ",
+    "フラクトゥール": " \\frak ABC　abc　あいう ",
+    "スクリプトフォント": " \\scr ABC　abc　あいう ",
+    "白抜き文字": " \\mathbb{ABC　abc　あいう} ",
+    "フォント混在": " \\scr{AB}\\bf{CD}\\it{EF} "
+  },
+  "カリグラフィー": {
+    "カリグラフィー": " \\mathcal{ABCDEFGHIJKLMN}\\mathcal{OPQRSTUVWXYZ} ",
+    "カリグラフィー 例：ラプラス変換": " \\mathcal{L}[f(t)]=\\int_0^{\\infty}f(t)e^{-st}dt ",
+    "カリグラフィー 例：フーリエ変換": " \\mathcal{F}[g(t)]=\\int_{-\\infty}^{\\infty}g(t)e^{-2\\pi ift}dt "
+  },
+  "文字サイズ": {
+    "文字サイズ1": " \\Huge Huge",
+    "文字サイズ2": " \\huge huge",
+    "文字サイズ3": " \\LARGE LARGE",
+    "文字サイズ4": " \\Large Large",
+    "文字サイズ5": " \\large large",
+    "文字サイズ6": " \\normalsize normalsize",
+    "文字サイズ7": " \\small small",
+    "文字サイズ8": " \\scriptsize scriptsize",
+    "文字サイズ9": " \\tiny tiny",
+    "サイズ混在": " \\Large{L}\\normalsize{M}\\small{s}"
+  }
+}

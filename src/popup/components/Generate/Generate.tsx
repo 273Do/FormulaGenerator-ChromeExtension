@@ -92,7 +92,7 @@ const Generate = () => {
           <CreateFavorite currentValue={currentValue} />
         </div>
         <div className="flex flex-col items-end justify-end w-full h-24">
-          <MathJaxContext src="../../../mathjax/es5/tex-chtml.js">
+          <MathJaxContext src="/mathJax/es5/tex-chtml.js">
             <MathJax
               dynamic
               className={`${zoomSetting} w-full h-full overflow-scroll`}
@@ -109,7 +109,7 @@ const Generate = () => {
             className="text-primary bg-muted w-full h-6 rounded-md font-light pr-6 pl-2 -mr-8 text-sm mt-[2px] outline-none"
             placeholder={t("Texを入力")}
             maxRows={5}
-            onChange={() => saveFormula(ref.current?.value)}
+            onChange={() => saveFormula(ref.current?.value ?? "")}
             ref={ref}
             defaultValue={currentValue}
             value={currentValue}
@@ -152,7 +152,7 @@ const Generate = () => {
                     <div className="gap-2 flex flex-col">
                       {Object.keys(data[key]).map((subKey) => (
                         <MathJaxContext
-                          src="../../../mathjax/es5/tex-chtml.js"
+                          src="/mathJax/es5/tex-chtml.js"
                           key={subKey}
                         >
                           <MathJax

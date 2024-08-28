@@ -20,7 +20,7 @@ const FavoriteItem = ({ data }: { data: FavoriteItemObj }) => {
           </div>
         </div>
         <div className="h-12 w-[170px] items-center flex">
-          <MathJaxContext src="../../../mathjax/es5/tex-chtml.js">
+          <MathJaxContext src="/mathJax/es5/tex-chtml.js">
             <MathJax dynamic className="text-xs w-full h-full overflow-scroll">
               {`$$${data.formula}$$`}
             </MathJax>

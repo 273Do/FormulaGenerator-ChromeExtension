@@ -1,0 +1,19 @@
+{
+  "積分": {
+    "積分1": " \\int f(x)dx ",
+    "積分2": " \\int_0^{\\infty} f(x)dx ",
+    "積分 例": " \\begin{align*} \\int_1^2 x^2 dx &= \\left[ \\frac{x^3}{3} \\right]_1^2 \\\\&= \\frac{8}{3} - \\frac{1}{3} \\\\&= \\frac{7}{3} \\end{align*} "
+  },
+  "重積分": {
+    "重積分1": " \\iint_D f(x, y)dxdy ",
+    "重積分2": " \\iiint_V f(x, y, z)dxdydz ",
+    "重積分3": " \\int \\!\\!\\!\\! \\int_D f(x, y)dxdy "
+  },
+  "多重積分": {
+    "多重積分": " \\idotsint_D f(x_1, \\cdots , x_n) dx_1 \\cdots dx_n "
+  },
+  "周回積分": {
+    "周回積分1": " \\oint_C fds ",
+    "周回積分2": " \\oint_C \\mathbf{F}(\\mathbf{r}) \\cdot d\\mathbf{r} "
+  }
+}

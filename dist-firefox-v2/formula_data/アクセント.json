@@ -1,0 +1,26 @@
+{
+  "アクセント": {
+    "アクセント1": "\\hat{a} ",
+    "アクセント2": "\\acute{a} ",
+    "アクセント3": "\\tilde{a} ",
+    "アクセント4": "\\bar{a} ",
+    "アクセント5": "\\dot{a} ",
+    "アクセント6": "\\check{a} ",
+    "アクセント7": "\\grave{a} ",
+    "アクセント8": "\\breve{a} ",
+    "アクセント9": "\\vec{a} ",
+    "アクセント10": "\\ddot{a} "
+  },
+  "複数文字に対するアクセント記号": {
+    "アクセント11": "\\widehat{ABC} ",
+    "アクセント12": "\\overline{ABC} ",
+    "アクセント13": "\\overrightarrow{ABC} ",
+    "アクセント14": "\\overbrace{ABC} ",
+    "アクセント15": "\\overbrace{ABC \\cdots Z}^{26} ",
+    "アクセント16": "\\widetilde{ABC} ",
+    "アクセント17": "\\underline{ABC} ",
+    "アクセント18": "\\overleftarrow{ABC} ",
+    "アクセント19": "\\underbrace{ABC} ",
+    "アクセント20": "\\underbrace{ABC \\cdots Z}_{26} "
+  }
+}

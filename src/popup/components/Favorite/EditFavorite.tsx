@@ -86,7 +86,7 @@ const EditFavorite = ({ item }: { item: FavoriteItemObj }) => {
         </DialogTitle>
       </DialogHeader>
       <div className="max-h-60 w-60 text-xs font-inter font-semibold text-center">
-        <MathJaxContext src="../../../mathjax/es5/tex-chtml.js">
+        <MathJaxContext src="..//mathjax/es5/tex-chtml.js">
           <MathJax dynamic className="text-xs w-full h-full overflow-scroll">
             {`$$${currentValue}$$`}
           </MathJax>
@@ -98,7 +98,9 @@ const EditFavorite = ({ item }: { item: FavoriteItemObj }) => {
           placeholder={t("Texを入力")}
           maxRows={5}
           defaultValue={currentValue}
-          onChange={(e) => setCurrentValue(e.target.value)}
+          onChange={(e) =>
+            setCurrentValue((e.target as HTMLTextAreaElement).value)
+          }
         />
         <CopySelector tex={item.formula} className="mx-2" />
       </div>

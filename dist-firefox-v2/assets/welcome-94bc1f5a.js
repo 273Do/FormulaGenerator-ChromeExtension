@@ -1,0 +1,1 @@
+import{j as e,c as t,R as r}from"./chunk-8af76da2.js";const c=()=>e.jsx("div",{className:"flex h-screen items-center justify-center",children:e.jsx("h1",{children:"Welcome"})});t(document.getElementById("root")).render(e.jsx(r.StrictMode,{children:e.jsx(c,{})}));

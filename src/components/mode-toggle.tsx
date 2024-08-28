@@ -44,7 +44,12 @@ export function ModeToggle() {
       <DropdownMenuContent className="font-inter border border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <DropdownMenuLabel>{t("テーマ")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+        <DropdownMenuRadioGroup
+          value={position}
+          onValueChange={(value: string) =>
+            setPosition(value as "dark" | "light" | "system")
+          }
+        >
           <DropdownMenuRadioItem
             value="light"
             onClick={() => setTheme("light")}

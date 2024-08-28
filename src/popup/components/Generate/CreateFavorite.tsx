@@ -81,7 +81,7 @@ const CreateFavorite = ({ currentValue }: { currentValue: string }) => {
           <DialogDescription></DialogDescription>
         </DialogHeader>
         <div className=" overflow-scroll h-24 text-2xl font-inter font-semibold w-full text-center">
-          <MathJaxContext src="../../../mathjax/es5/tex-chtml.js">
+          <MathJaxContext src="/mathJax/es5/tex-chtml.js">
             <MathJax dynamic className={`text-base w-full pointer-events-none`}>
               {`$$${currentValue}$$`}
             </MathJax>
